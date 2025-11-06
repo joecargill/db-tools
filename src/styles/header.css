@@ -1,0 +1,108 @@
+.db-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* key change */
+}
+
+/* nav styles */
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 .9375rem;
+}
+
+.menu {
+  background-color: #2e2e2e;
+  border: none;
+  color: #fff8ea;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+
+.dark .menu {
+  background-color: #fff8ea;
+  color: #2e2e2e;
+}
+
+.nav-links {
+  width: 100%;
+  display: none;
+  margin: 0;
+}
+
+.nav-links a {
+  display: block;
+  text-align: center;
+  padding: 10px 0;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #2e2e2e;
+}
+
+.dark .nav-links a {
+  color: #fff8ea;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+  background-color: #ff9776;
+}
+
+.dark .nav-links a:hover,
+.dark .nav-links a:focus {
+  color: #2e2e2e;
+}
+
+:has(.menu[aria-expanded="true"]) .nav-links {
+  display: unset;
+}
+
+@media (max-width: 636px) {
+  .db-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  /* Put the nav above AND split its contents into two rows */
+  .navbar {
+    order: -1; /* Move above Logo */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  /* First row: menu + theme toggle */
+  .navbar > .menu,
+  .navbar > .theme-toggle {
+    align-self: center;
+  }
+
+  /* Make sure Menu + ThemeToggle sit side-by-side */
+  .navbar-top-row {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  /* Center the nav links under the logo */
+  .nav-links {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Center logo */
+  .logo-stacked-container {
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+  }
+}

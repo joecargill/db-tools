@@ -25,12 +25,19 @@ footer.db-footer {
 @media (max-width: 600px) {
   .db-footer {
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
     text-align: center;
     align-items: center;
+    padding: 1em 0 1.5em 0 !important;
+  }
+
+  .db-footer__left {
+    width: 100%;
+    justify-content: center; /* ✅ center legal notice */
   }
 
   .db-footer__right {
-    align-self: center; /* ✅ center on mobile */ 
+    align-self: center; /* ✅ center right section */
+    justify-content: center;
   }
 }

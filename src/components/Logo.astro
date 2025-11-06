@@ -6,9 +6,5 @@ const { pageTitle } = Astro.props;
 <div class="logo-stacked-container">
   <div class={!!pageTitle ? "logo logo--underline" : "logo"}>
     <a href="/"><span class="logo--primary">DRAGONBANE</span><span class="logo--secondary">TOOLS</span></a>
-    <!-- {!!pageTitle &&
-      <div class="logo__underline logo--secondary"></div>
-      <div class="logo__subheading logo--secondary">{pageTitle}</div>
-    } -->
   </div>
 </div>

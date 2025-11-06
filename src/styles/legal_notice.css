@@ -42,3 +42,19 @@
 .dark .db-legal-notice {
   color: #cccccc;
 }
+
+@media (max-width: 600px) {
+  .db-legal-notice {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .db-legal-notice__logo {
+    height: 3.5em;     /* slightly larger for mobile, optional */
+  }
+
+  .db-legal-notice__text p + p {
+    margin-top: 0.5rem; /* more spacing on mobile */
+  }
+}
