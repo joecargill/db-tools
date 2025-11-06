@@ -1,9 +1,9 @@
 .kofi-button {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.2rem 0.4rem 0.3rem 0.4rem;
-  margin-bottom: 0.1em;
+  gap: 0.2rem;
+  padding: 0.2rem 0.4rem 0.2rem 0.4rem;
+  /* margin-bottom: 0.1em; */
   border-radius: 0.4rem;
   /* background: #fff; */
   color: #000;
@@ -20,7 +20,7 @@
 }
 
 .kofi-button__text {
-  margin-bottom: -0.3em;
+  margin-bottom: -0.18em;
 }
 
 .kofi-button__icon {
