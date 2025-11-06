@@ -1,0 +1,5 @@
+{
+  "name": "dragonbane-tools",
+  "compatibility_date": "2025-11-06", // Update to the day you deploy
+  "pages_build_output_dir": "./dist"
+}

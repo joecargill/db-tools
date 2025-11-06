@@ -1,0 +1,15 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import PageList from "../components/PageList.astro";
+
+const allPosts = Object.values(import.meta.glob("./posts/*.md", { eager: true }));
+const pageTitle = "Bestiary";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <p>This is where I will post about my journey learning Astro.</p>
+
+    <PageList pages={allPosts} />
+
+</BaseLayout>

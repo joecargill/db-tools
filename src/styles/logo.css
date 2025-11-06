@@ -1,0 +1,54 @@
+a {
+  color: #2e2e2e;
+}
+.dark a {
+  color: #FFF8EA;
+}
+
+.logo-stacked-container {
+  display: flex;
+  justify-content: center;
+  /* margin: auto; */
+  /* text-align: center; */
+}
+.logo {
+  position: relative;
+  display: block;
+  font-family: "Protest Strike", sans-serif;
+  font-size: 3.5rem;
+  margin: 0;
+  padding: 0;
+  line-height: 3.5rem;
+  /* text-align: center; */
+  a {
+    text-decoration: none;
+  }
+}
+.logo--underline {
+  border-bottom: 2px solid;
+}
+.logo--primary {
+  color: #FF0000;
+}
+.logo--secondary {
+  color: #2e2e2e;
+}
+.dark .logo--secondary {
+  color: #FFF8EA;
+}
+.logo__underline {
+  width: 99%;                /* slightly shorter than logo text */
+  height: 2px;
+  background-color: #2e2e2e; /* or any accent color */
+  margin: .0rem auto .3rem; /* vertical spacing (above & below) */
+}
+.dark .logo__underline {
+  background-color: #FFF8EA; /* or any accent color */
+}
+
+.logo__subheading {
+  font-family: "Colus", sans-serif;
+  font-size: 2.5rem;
+  margin: 0;                 /* reset default paragraph margin */
+  line-height: 2.5rem;
+}

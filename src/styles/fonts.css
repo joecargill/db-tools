@@ -1,0 +1,35 @@
+/* Colus Regular (static OTF) */
+@font-face {
+  font-family: "Colus";
+  src: url("/fonts/Colus-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Crimson Pro Variable (normal) */
+@font-face {
+  font-family: "Crimson Pro";
+  src: url("/fonts/CrimsonPro-VariableFont.ttf") format("truetype-variations");
+  font-weight: 200 900; /* supports the full variable range */
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Crimson Pro Variable (italic) */
+@font-face {
+  font-family: "Crimson Pro";
+  src: url("/fonts/CrimsonPro-Italic-VariableFont.ttf") format("truetype-variations");
+  font-weight: 200 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Protest Strike Regular */
+@font-face {
+  font-family: "Protest Strike";
+  src: url("/fonts/ProtestStrike-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

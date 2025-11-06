@@ -9,6 +9,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.14.4"
+    "@astrojs/preact": "^4.1.2",
+    "astro": "^5.14.4",
+    "preact": "^10.27.2"
+  },
+  "devDependencies": {
+    "wrangler": "^4.45.4"
   }
 }

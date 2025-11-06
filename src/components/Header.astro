@@ -1,0 +1,17 @@
+---
+import Menu from "./Menu.astro";
+import Navigation from "./Navigation.astro";
+import ThemeToggle from "./ThemeToggle.astro";
+import Logo from "./Logo.astro";
+
+const { pageTitle } = Astro.props;
+---
+<header class="db-header">
+  <Logo pageTitle={pageTitle} />
+  <nav class="navbar">
+    <Menu />
+    <Navigation />
+    <ThemeToggle />
+  </nav>
+
+</header>
