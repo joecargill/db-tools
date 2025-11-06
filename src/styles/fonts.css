@@ -33,3 +33,12 @@
   font-style: normal;
   font-display: swap;
 }
+
+/* Odibee Sans Regular */
+@font-face {
+  font-family: "Odibee Sans";
+  src: url("/fonts/OdibeeSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

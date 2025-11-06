@@ -1,5 +1,5 @@
 ---
-import Social from "./Social.astro";
+import { Image } from 'astro:assets';
 ---
 <style>
   footer {
@@ -9,8 +9,9 @@ import Social from "./Social.astro";
   }
 </style>
 
-<footer>
-  <Social platform="twitter" username="joecargill" />
-  <Social platform="github" username="joecargill" />
-  <Social platform="youtube" username="joecargill" />
+<footer class="db-footer">
+  <a class="dev-by-corpo" href="https://corpo.dev">
+    developed by c•rp•
+    <!-- <img src="/images/developedbycorpo-white.png" alt="Developed by Corpo" width="80" /> -->
+  </a>
 </footer>
