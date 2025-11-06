@@ -1,0 +1,40 @@
+.kofi-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.2rem 0.4rem 0.3rem 0.4rem;
+  margin-bottom: 0.1em;
+  border-radius: 0.4rem;
+  /* background: #fff; */
+  color: #000;
+  font-family: sans-serif;
+  font-size: 0.85rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s ease;
+  
+}
+
+.kofi-button:hover {
+  outline: 1px solid;
+}
+
+.kofi-button__text {
+  margin-bottom: -0.3em;
+}
+
+.kofi-button__icon {
+  height: 1em;          /* ✅ scales with font size */
+  width: auto;
+  display: block;
+}
+
+/* Optional: slight tweak for dark mode */
+.dark .kofi-button {
+  /* background: #000; */
+  color: #fff;
+}
+
+.dark .kofi-button:hover {
+  outline: 1px solid;
+}

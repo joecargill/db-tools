@@ -2,7 +2,7 @@ a {
   color: #2e2e2e;
 }
 .dark a {
-  color: #FFF8EA;
+  color: #fff8ea;
 }
 
 .logo-stacked-container {
@@ -34,7 +34,7 @@ a {
   color: #2e2e2e;
 }
 .dark .logo--secondary {
-  color: #FFF8EA;
+  color: #fff8ea;
 }
 .logo__underline {
   width: 99%;                /* slightly shorter than logo text */
@@ -43,7 +43,7 @@ a {
   margin: .0rem auto .3rem; /* vertical spacing (above & below) */
 }
 .dark .logo__underline {
-  background-color: #FFF8EA; /* or any accent color */
+  background-color: #fff8ea; /* or any accent color */
 }
 
 .logo__subheading {
@@ -52,3 +52,4 @@ a {
   margin: 0;                 /* reset default paragraph margin */
   line-height: 2.5rem;
 }
+

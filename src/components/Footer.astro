@@ -1,17 +1,18 @@
 ---
-import { Image } from 'astro:assets';
----
-<style>
-  footer {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-</style>
+import AuthorSignature from "./AuthorSignature.astro";
+import KofiButton from "./widgets/KofiButton.astro"
+import LegalNotice from "./LegalNotice.astro"
 
+import "../styles/footer.css";
+---
 <footer class="db-footer">
-  <a class="dev-by-corpo" href="https://corpo.dev">
-    developed by c•rp•
-    <!-- <img src="/images/developedbycorpo-white.png" alt="Developed by Corpo" width="80" /> -->
-  </a>
+  <div class="db-footer__left">
+    <LegalNotice />
+  </div>
+
+  <div class="db-footer__right">
+    
+    <AuthorSignature />
+    <KofiButton />
+  </div>
 </footer>

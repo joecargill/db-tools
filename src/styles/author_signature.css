@@ -1,0 +1,30 @@
+.author-signature {
+  font-size: 2rem;
+  display: inline-flex;
+  gap: 0.2em;
+  color: #000;
+  /* padding-bottom: 0.3em; */
+  margin-bottom: -0.35em;
+}
+.author-signature:hover{
+  
+  color: #2e2e2e;
+}
+.dark .author-signature {
+  color: #fff;
+}
+.dark .author-signature:hover {
+  color: #fff8ea;
+}
+
+.author-signature__prefix {
+  font-size: 0.6em;
+  font-family: "Odibee Sans", serif;
+}
+
+.author-signature__icon {
+  display: inline-block;
+  height: 1.2em;
+  width: auto;
+  transform: translateY(-0.09em); 
+}
