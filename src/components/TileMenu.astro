@@ -1,0 +1,26 @@
+---
+import Tile from "./Tile.astro";
+
+import "../styles/tile_menu.css";
+
+export interface TileInfo {
+  label: string;
+  href: string;
+}
+
+export interface Props {
+  tiles: TileInfo[];
+}
+
+const { tiles } = Astro.props;
+---
+
+<div class="db-tile-menu">
+  {tiles.map(tile => (
+    <Tile label={tile.label} href={tile.href} />
+  ))}
+</div>
+
+<style>
+  
+</style>

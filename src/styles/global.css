@@ -1,12 +1,12 @@
 html {
-  background-color: #fff8ea;
+  background-color: var(--db-light);
   font-family: sans-serif;
-  color: #2e2e2e;
+  color: var(--db-dark);
 }
 
 html.dark {
-  background-color: #272727;
-  color: #fff8ea;
+  background-color: var(--db-dark);
+  color: var(--db-light);
 }
 
 body {
@@ -27,6 +27,10 @@ html, body {
   margin: 0;
 }
 
+hr {
+  margin: 0.1em 0 0.4em 0;
+}
+
 main {
   flex: 1; /* pushes footer down */
 }
@@ -35,11 +39,18 @@ main {
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
 h1 {
   font-family: "Colus", sans-serif;
   text-align: left;
   font-size: 2rem;
   margin: 0;
+}
+h1 a:hover {
+  opacity: 0.8;
 }
 @media (max-width: 600px) {
   h1 {
@@ -55,4 +66,17 @@ h2 {
   text-align: left;
   font-size: 1.6rem;
   margin: 0;
+  padding: 0;
+  color: var(--db-green-dark);
+}
+.dark h2 {
+  color: var(--db-green-light);
+}
+
+h3 {
+  font-size: 1.3rem;
+  margin: 0;
+  padding: 0;
+}
+.dark h3 {
 }

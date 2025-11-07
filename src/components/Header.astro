@@ -6,10 +6,10 @@ import Logo from "./Logo.astro";
 
 import "../styles/header.css";
 
-const { pageTitle } = Astro.props;
+const { page } = Astro.props;
 ---
 <header class="db-header">
-  <Logo pageTitle={pageTitle} />
+  <Logo page={page} />
   <nav class="navbar">
     <Menu />
     <Navigation />

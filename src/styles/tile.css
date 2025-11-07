@@ -1,0 +1,36 @@
+.db-tile {
+  font-family: "Colus", serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+  background: var(--db-light);
+  color: var(--db-dark);
+  text-decoration: none;
+  font-size: 1.2rem;
+  /* border-radius: 12px; */
+  border: 1px solid;
+  /* transition: transform 0.15s ease, background 0.2s ease; */
+}
+
+.db-tile:hover {
+  border: 3px solid;
+  color: var(--db-green-dark);
+}
+
+.dark .db-tile {
+  background: var(--db-dark);
+  color: var(--db-light);
+  border: 3px solid;
+}
+.dark .db-tile:hover {
+  border: 3px solid;
+  color: var(--db-green-light);
+}
+
+@media (max-width: 480px) {
+  .db-tile {
+    height: 90px;
+    font-size: 1rem;
+  }
+}

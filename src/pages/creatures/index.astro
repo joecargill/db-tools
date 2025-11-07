@@ -6,9 +6,14 @@ import { slugFromId } from "../../utils/slug";
 
 const monsters = await getCollection("monster");
 const npcs = await getCollection("npc");
+
+const page = {
+  title: "Bestiary",
+  path: "/creatures"
+}
 ---
 
-<BaseLayout pageTitle="Bestiary">
+<BaseLayout page={page}>
 
   <h2>Monsters</h2>
   <ul>

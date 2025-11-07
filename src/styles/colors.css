@@ -1,0 +1,33 @@
+/* src/styles/colors.css */
+
+:root {
+  --db-red: #EF403D;
+  --db-green-dark: #00604D;
+  --db-green-light: #007e65;
+  --db-dark: #272727;
+  --db-light: #f9f4eb;
+
+
+  /* Text colors */
+  --color-text-main: #222;
+  --color-text-muted: #666;
+  --color-text-accent: #ff4477;
+
+  /* Tile-specific colors */
+  --color-tile-text: #333;
+  --color-tile-bg: #f0f0f0;
+  --color-tile-bg-hover: #e4e4e4;
+}
+
+/* Optional: Dark mode overrides */
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --color-text-main: #f0f0f0;
+    --color-text-muted: #999;
+    --color-text-accent: #ff6b9e;
+
+    --color-tile-text: #fff;
+    --color-tile-bg: #222;
+    --color-tile-bg-hover: #333;
+  }
+} */

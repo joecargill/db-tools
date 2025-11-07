@@ -8,13 +8,13 @@
 }
 .author-signature:hover{
   
-  color: #2e2e2e;
+  color: var(--db-dark);
 }
 .dark .author-signature {
   color: #fff;
 }
 .dark .author-signature:hover {
-  color: #fff8ea;
+  color: var(--db-light);
 }
 
 .author-signature__prefix {

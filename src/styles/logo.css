@@ -1,8 +1,8 @@
 a {
-  color: #2e2e2e;
+  color: var(--db-dark);
 }
 .dark a {
-  color: #fff8ea;
+  color: var(--db-light);
 }
 
 .logo-stacked-container {
@@ -28,22 +28,22 @@ a {
   border-bottom: 2px solid;
 }
 .logo--primary {
-  color: #FF0000;
+  color: var(--db-red);
 }
 .logo--secondary {
-  color: #2e2e2e;
+  color: var(--db-dark);
 }
 .dark .logo--secondary {
-  color: #fff8ea;
+  color: var(--db-light);
 }
 .logo__underline {
   width: 99%;                /* slightly shorter than logo text */
   height: 2px;
-  background-color: #2e2e2e; /* or any accent color */
+  background-color: var(--db-dark); /* or any accent color */
   margin: .0rem auto .3rem; /* vertical spacing (above & below) */
 }
 .dark .logo__underline {
-  background-color: #fff8ea; /* or any accent color */
+  background-color: var(--db-light); /* or any accent color */
 }
 
 .logo__subheading {

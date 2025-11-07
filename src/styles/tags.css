@@ -5,13 +5,24 @@
 
 .tag {
   margin: 0.25em;
-  border: dotted 1px #a1a1a1;
-  border-radius: .5em;
-  padding: .5em 1em;
-  font-size: 1.15em;
-  background-color: #F8FCFD;
+  /* border: solid 1px var(--db-green-dark); */
+  border-radius: .25em;
+  padding: 0 0.4em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.25rem;
+  background-color: var(--db-green-dark);
+  text-transform: uppercase;
 
   a {
-    color: #4bbf08;
+    color: var(--db-light);
+  }
+}
+.dark .tag {
+  /* border: solid 1px var(--db-green-light); */
+  background-color: var(--db-green-light);
+
+  a {
+    color: var(--db-dark);
   }
 }

@@ -1,0 +1,14 @@
+---
+import "../styles/tile.css";
+
+export interface Props {
+  label: string;
+  href: string;
+}
+
+const { label, href } = Astro.props;
+---
+
+<a class="db-tile" href={href}>
+  {label}
+</a>

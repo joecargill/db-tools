@@ -4,8 +4,12 @@ import BaseLayout from "./BaseLayout.astro";
 import "../styles/tags.css";
 
 const { frontmatter } = Astro.props;
+const page = {
+  title: "Blog",
+  path: "/blog"
+}
 ---
-<BaseLayout pageTitle={frontmatter.title}>
+<BaseLayout page={page}>
   <p>{frontmatter.pubDate.toLocaleDateString()}</p>
     <p><em>{frontmatter.description}</em></p>
     <p>Written by: {frontmatter.author}</p>

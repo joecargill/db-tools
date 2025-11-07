@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 
+import TagsList from "../../../components/TagsList.astro";
+
 import { getCollection, getEntry } from "astro:content";
 import { slugFromId } from "../../../utils/slug";
 
@@ -18,174 +20,171 @@ const npc = await getEntry("npc", id);
 
 // Shorthand
 const d = npc.data;
+
+const page = {
+  title: "Bestiary",
+  path: "/creatures"
+}
 ---
 
-<BaseLayout pageTitle="Bestiary">
+<BaseLayout page={page}>
   <h3><strong>NPC</strong></h3>
-  <h2 class="db-green">{d.name}</h2>
-  
-
-  <p>
-    <term>Tags:</term>
-    {
-      d.tags && d.tags.length > 0
-        ? d.tags.join(", ")
-        : "—"
-    }
-  </p>
+  <h2 class="db-green-dark">{d.name}</h2>
   <hr>
+  <TagsList tags={d.tags} />
+  <br/>
 </div>
 
-<div class="page-columns">
+  <div class="page-columns">
 
-  {d.description && (
-    <div class="db-font-normal mb-4">
-      {d.description}
-    </div>
-  )}
-
-  <div class="stats-box | mb-5 mb-lg-4">
-    <table class="stats-table | db-font-normal">
-
-      <tr>
-        <td>
-          <term>Morale:</term>
-          <span class="d-inline-block">{d.morale ?? "—"}</span>
-        </td>
-
-        <td colspan="2">
-          <term>D. Bonus:</term>
-          <span class="d-inline-block">
-            {
-              d.damage_bonuses
-                ? d.damage_bonuses.map(db => `${db.type}+${db.value}`).join(", ")
-                : "—"
-            }
-          </span>
-        </td>
-      </tr>
-
-      <tr>
-        <td>
-          <term>Move:</term>
-          <span class="d-inline-block">{d.move}</span>
-        </td>
-
-        <td colspan="2">
-          <term>HP:</term>
-          <span class="d-inline-block">{d.hp}</span>
-
-          <term class="ms-2">WP:</term>
-          <span class="d-inline-block">{d.wp ?? "—"}</span>
-        </td>
-      </tr>
-
-      {d.skills && (
-        <tr>
-          <td colspan="3">
-            <term class="me-1">Skills:</term>
-            {d.skills.map((s, i) => (
-              <>
-                <span class="d-inline-block capitalized">{s.name} {s.level}</span>
-                {i < d.skills.length - 1 ? ", " : ""}
-              </>
-            ))}
-          </td>
-        </tr>
-      )}
-
-      {d.abilities && (
-        <tr>
-          <td colspan="3">
-            <term class="me-1">Abilities:</term>
-            {d.abilities.map((a, i) => (
-              <>
-                <span class="d-inline-block capitalized">{a}</span>
-                {i < d.abilities.length - 1 ? ", " : ""}
-              </>
-            ))}
-          </td>
-        </tr>
-      )}
-
-      {d.spells && (
-        <tr>
-          <td colspan="3">
-            <term class="me-1">Spells:</term>
-            {d.spells.map((s, i) => (
-              <>
-                <span class="d-inline-block" set:html={s}></span>
-                {i < d.spells.length - 1 ? ", " : ""}
-              </>
-            ))}
-          </td>
-        </tr>
-      )}
-
-      {d.armors && (
-        <tr>
-          <td colspan="3">
-            <term class="me-1">Typical Armor:</term>
-            {d.armors.map((a, i) => (
-              <>
-                <span class="d-inline-block">{a.name} ({a.rating})</span>
-                {i < d.armors.length - 1 ? ", " : ""}
-              </>
-            ))}
-          </td>
-        </tr>
-      )}
-
-      {d.weapons && (
-        <tr>
-          <td colspan="3">
-            <term class="me-1">Typical Weapons:</term>
-            {d.weapons.map((w, i) => (
-              <>
-                <span class="d-inline-block">{w.name} ({w.damage})</span>
-                {i < d.weapons.length - 1 ? ", " : ""}
-              </>
-            ))}
-          </td>
-        </tr>
-      )}
-
-    </table>
-
-    {d.resistance && (
-      <div class="mt-1">
-        <p>
-          <b>Resistance:</b> {d.resistance}
-        </p>
+    {d.description && (
+      <div class="db-font-normal mb-4">
+        {d.description}
       </div>
     )}
 
-    {d.immunity && (
-      <div>
-        <p>
-          <b>Immunity:</b> {d.immunity}
-        </p>
-      </div>
-    )}
+    <div class="stats-box | mb-5 mb-lg-4">
+      <table class="stats-table | db-font-normal">
+        <tr>
+          <td>
+            <term>Morale:</term>
+            <span class="d-inline-block">{d.morale ?? "—"}</span>
+          </td>
 
-    {d.weakness && (
-      <div>
-        <p>
-          <b>Weakness:</b> {d.weakness}
-        </p>
-      </div>
-    )}
+          <td colspan="2">
+            <term>D. Bonus:</term>
+            <span class="d-inline-block">
+              {
+                d.damage_bonuses
+                  ? d.damage_bonuses.map(db => `${db.type}+${db.value}`).join(", ")
+                  : "—"
+              }
+            </span>
+          </td>
+        </tr>
 
-    {d.effects && (
-      <div>
-        {d.effects.map((e) => (
+        <tr>
+          <td>
+            <term>Move:</term>
+            <span class="d-inline-block">{d.move}</span>
+          </td>
+
+          <td colspan="2">
+            <term>HP:</term>
+            <span class="d-inline-block">{d.hp}</span>
+
+            <term class="ms-2">WP:</term>
+            <span class="d-inline-block">{d.wp ?? "—"}</span>
+          </td>
+        </tr>
+
+        {d.skills && (
+          <tr>
+            <td colspan="3">
+              <term class="me-1">Skills:</term>
+              {d.skills.map((s, i) => (
+                <>
+                  <span class="d-inline-block capitalized">{s.name} {s.level}</span>
+                  {i < d.skills.length - 1 ? ", " : ""}
+                </>
+              ))}
+            </td>
+          </tr>
+        )}
+
+        {d.abilities && (
+          <tr>
+            <td colspan="3">
+              <term class="me-1">Abilities:</term>
+              {d.abilities.map((a, i) => (
+                <>
+                  <span class="d-inline-block capitalized">{a}</span>
+                  {i < d.abilities.length - 1 ? ", " : ""}
+                </>
+              ))}
+            </td>
+          </tr>
+        )}
+
+        {d.spells && (
+          <tr>
+            <td colspan="3">
+              <term class="me-1">Spells:</term>
+              {d.spells.map((s, i) => (
+                <>
+                  <span class="d-inline-block" set:html={s}></span>
+                  {i < d.spells.length - 1 ? ", " : ""}
+                </>
+              ))}
+            </td>
+          </tr>
+        )}
+
+        {d.armors && (
+          <tr>
+            <td colspan="3">
+              <term class="me-1">Typical Armor:</term>
+              {d.armors.map((a, i) => (
+                <>
+                  <span class="d-inline-block">{a.name} ({a.rating})</span>
+                  {i < d.armors.length - 1 ? ", " : ""}
+                </>
+              ))}
+            </td>
+          </tr>
+        )}
+
+        {d.weapons && (
+          <tr>
+            <td colspan="3">
+              <term class="me-1">Typical Weapons:</term>
+              {d.weapons.map((w, i) => (
+                <>
+                  <span class="d-inline-block">{w.name} ({w.damage})</span>
+                  {i < d.weapons.length - 1 ? ", " : ""}
+                </>
+              ))}
+            </td>
+          </tr>
+        )}
+      </table>
+
+      {d.resistance && (
+        <div class="mt-1">
           <p>
-            <b>{e.name}:</b> {e.description}
+            <b>Resistance:</b> {d.resistance}
           </p>
-        ))}
-      </div>
-    )}
+        </div>
+      )}
 
+      {d.immunity && (
+        <div>
+          <p>
+            <b>Immunity:</b> {d.immunity}
+          </p>
+        </div>
+      )}
+
+      {d.weakness && (
+        <div>
+          <p>
+            <b>Weakness:</b> {d.weakness}
+          </p>
+        </div>
+      )}
+
+      {d.effects && (
+        <div>
+          {d.effects.map((e) => (
+            <p>
+              <b>{e.name}:</b> {e.description}
+            </p>
+          ))}
+        </div>
+      )}
+
+    </div>
   </div>
 
+  <hr>
 </BaseLayout>

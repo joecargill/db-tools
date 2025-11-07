@@ -15,11 +15,17 @@ export async function getStaticPaths() {
 
 const { id } = Astro.props;
 const monster = await getEntry("monster", id);
+
+const page = {
+  title: "Bestiary",
+  path: "/creatures",
+  metaTitle: monster.data.name
+}
 ---
 
-<BaseLayout pageTitle="Bestiary">
+<BaseLayout page={page}>
   <h3><strong>MONSTER</strong></h3>
-  <h2 class="db-green">{monster.data.name}</h2>
+  <h2 class="db-green-dark">{monster.data.name}</h2>
 
   <p>{monster.data.description}</p>
 </BaseLayout>

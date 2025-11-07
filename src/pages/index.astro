@@ -1,15 +1,22 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-import Greeting from '../components/Greeting';
+import TileMenu from '../components/TileMenu.astro';
 
-const pageTitle = "";
+const tiles = [
+  { label: "Bestiary", href: "/creatures" },
+  { label: "Magic Items", href: "/magic-items" },
+  { label: "Spells", href: "/spells" },
+  { label: "Character Sheet", href: "/character-sheet"}
+];
+
+const page = {
+  title: "Index",
+  path: "/"
+}
 ---
 
-<BaseLayout pageTitle={pageTitle}>
-
-  <ul>
-    <li><a href="/creatures">Beastiary</a></li>
-  </ul>
+<BaseLayout page={page}>
+  <TileMenu tiles={tiles} />
   
 </BaseLayout>

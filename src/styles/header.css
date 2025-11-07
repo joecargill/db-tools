@@ -2,6 +2,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between; /* key change */
+
+  border-bottom: 2px solid;
 }
 
 /* nav styles */
@@ -13,17 +15,17 @@
 }
 
 .menu {
-  background-color: #2e2e2e;
+  background-color: var(--db-dark);
   border: none;
-  color: #fff8ea;
+  color: var(--db-light);
   font-size: 1.2rem;
   font-weight: bold;
   padding: 5px 10px;
 }
 
 .dark .menu {
-  background-color: #fff8ea;
-  color: #2e2e2e;
+  background-color: var(--db-light);
+  color: var(--db-dark);
 }
 
 .nav-links {
@@ -40,11 +42,11 @@
   font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
-  color: #2e2e2e;
+  color: var(--db-dark);
 }
 
 .dark .nav-links a {
-  color: #fff8ea;
+  color: var(--db-light);
 }
 
 .nav-links a:hover,
@@ -54,7 +56,7 @@
 
 .dark .nav-links a:hover,
 .dark .nav-links a:focus {
-  color: #2e2e2e;
+  color: var(--db-dark);
 }
 
 :has(.menu[aria-expanded="true"]) .nav-links {

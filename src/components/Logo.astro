@@ -1,10 +1,8 @@
 ---
 import "../styles/logo.css";
-
-const { pageTitle } = Astro.props;
 ---
 <div class="logo-stacked-container">
-  <div class={!!pageTitle ? "logo logo--underline" : "logo"}>
-    <a href="/"><span class="logo--primary">DRAGONBANE</span><span class="logo--secondary">TOOLS</span></a>
+  <div class="logo xlogo--underline">
+    <a href="/" aria-label="Dragonbane tools"><span class="logo--primary">DRAGONBANE</span><span class="logo--secondary">TOOLS</span></a>
   </div>
 </div>

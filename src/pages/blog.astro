@@ -5,11 +5,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 import PageList from "../components/PageList.astro";
 
-const pageTitle = "Bestiary";
 const allPosts = await getCollection("blog");
+
+
+const page = {
+  title: "Bestiary",
+  path: "/creatures"
+}
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout page={page}>
     <p>This is where I will post about my journey learning Astro.</p>
 
     <PageList pages={allPosts} />
