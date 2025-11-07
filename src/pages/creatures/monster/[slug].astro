@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+import { getCollection, getEntry } from "astro:content";
+import { slugFromId } from "../../../utils/slug";
+
+export async function getStaticPaths() {
+  const monsters = await getCollection("monster");
+
+  return monsters.map(entry => ({
+    params: { slug: slugFromId(entry.id) },
+    props: { id: entry.id },
+  }));
+}
+
+const { id } = Astro.props;
+const monster = await getEntry("monster", id);
+---
+
+<BaseLayout pageTitle="Bestiary">
+  <h3><strong>MONSTER</strong></h3>
+  <h2 class="db-green">{monster.data.name}</h2>
+
+  <p>{monster.data.description}</p>
+</BaseLayout>

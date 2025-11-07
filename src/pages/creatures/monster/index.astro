@@ -1,0 +1,18 @@
+---
+import { getCollection } from "astro:content";
+import { slugFromId } from "../../../utils/slug";
+
+const monsters = await getCollection("monster");
+---
+
+<h1>Monsters</h1>
+
+<ul>
+  {monsters.map((m) => (
+    <li>
+      <a href={`/creatures/monster/${slugFromId(m.id)}/`}>
+        {m.data.name}
+      </a>
+    </li>
+  ))}
+</ul>

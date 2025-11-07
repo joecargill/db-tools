@@ -1,0 +1,18 @@
+---
+import { getCollection } from "astro:content";
+import { slugFromId } from "../../../utils/slug";
+
+const npcs = await getCollection("npc");
+---
+
+<h1>NPCs</h1>
+
+<ul>
+  {npcs.map((n) => (
+    <li>
+      <a href={`/creatures/npc/${slugFromId(n.id)}/`}>
+        {n.data.name}
+      </a>
+    </li>
+  ))}
+</ul>

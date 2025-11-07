@@ -3,6 +3,6 @@ const { pages } = Astro.props;
 ---
 <ul>
   {pages.map((page: any) => 
-    <li><a href={page.url}>{page.frontmatter.title}</a></li>
+    <li><a href={`/posts/${page.id}/`}>{page.data.title}</a></li>
   )}
 </ul>

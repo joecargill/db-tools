@@ -17,8 +17,8 @@ footer.db-footer {
 
 .db-footer__right {
   display: flex;
-  align-items: flex-end; /* ✅ ensures the signature aligns to the bottom */
-  align-self: flex-end;  /* ✅ pushes it to the bottom of the footer row */
+  align-items: center; /* ✅ ensures the signature aligns to the bottom */
+  align-self: center;  /* ✅ pushes it to the bottom of the footer row */
   gap: 0.75rem;    
 }
 

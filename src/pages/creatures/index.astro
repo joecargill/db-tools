@@ -1,0 +1,35 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+import { getCollection } from "astro:content";
+import { slugFromId } from "../../utils/slug";
+
+const monsters = await getCollection("monster");
+const npcs = await getCollection("npc");
+---
+
+<BaseLayout pageTitle="Bestiary">
+
+  <h2>Monsters</h2>
+  <ul>
+    {monsters.map(m => (
+      <li>
+        <a href={`/creatures/monster/${slugFromId(m.id)}`}>
+          {m.data.name}
+        </a>
+      </li>
+    ))}
+  </ul>
+
+  <h2>NPCs</h2>
+  <ul>
+    {npcs.map(n => (
+      <li>
+        <a href={`/creatures/npc/${slugFromId(n.id)}`}>
+          {n.data.name}
+        </a>
+      </li>
+    ))}
+  </ul>
+
+</BaseLayout>
