@@ -10,7 +10,7 @@ const monsters = await getCollection("monster");
 <ul>
   {monsters.map((m) => (
     <li>
-      <a href={`/creatures/monster/${slugFromId(m.id)}/`}>
+      <a href={`/bestiary/monster/${slugFromId(m.id)}/`}>
         {m.data.name}
       </a>
     </li>

@@ -21,7 +21,7 @@ const grouped = creatures.reduce((acc, entry) => {
 
 const page = {
   title: "Bestiary",
-  path: "/creatures"
+  path: "/bestiary"
 }
 ---
 
@@ -37,7 +37,7 @@ const page = {
           <ul>
             {grouped[letter].map(entry => (
               <li>
-                <a href={`/creatures/${entry.collection}/${slugFromId(entry.id)}`}>
+                <a href={`/bestiary/${entry.collection}/${slugFromId(entry.id)}`}>
                   {entry.data.name}
                 </a>
               </li>

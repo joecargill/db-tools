@@ -85,7 +85,7 @@ ul {
   background-color: rgba(85, 34, 0, 0.13); /* change to any highlight color */
 }
 .dark .attack-table tr:nth-child(even) {
-  background-color: rgba(53, 53, 53, 0.13); /* change to any highlight color */
+  background-color: rgba(53, 53, 53, 0.715); /* change to any highlight color */
 }
 
 .attack-table tr:nth-child(odd) {

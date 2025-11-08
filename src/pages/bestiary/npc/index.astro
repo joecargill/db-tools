@@ -10,7 +10,7 @@ const npcs = await getCollection("npc");
 <ul>
   {npcs.map((n) => (
     <li>
-      <a href={`/creatures/npc/${slugFromId(n.id)}/`}>
+      <a href={`/bestiary/npc/${slugFromId(n.id)}/`}>
         {n.data.name}
       </a>
     </li>
