@@ -1,0 +1,25 @@
+{
+  "type": "MONSTER",
+  "name": "Basilisk",
+  "description": "A reptilian creature with a deadly gaze that can turn creatures to stone.",
+  "ferocity": 12,
+  "size": "LARGE",
+  "move": 6,
+  "hp": 20,
+  "tags": [
+    "beast",
+    "reptile"
+  ],
+  "attacks": [
+    {
+      "name": "Bite",
+      "description": "Basilisk bites its target, dealing 1d8 damage.",
+      "result": "1-3"
+    },
+    {
+      "name": "Petrifying Gaze",
+      "description": "Targets within 30' must save vs. petrification or be turned to stone.",
+      "result": "4-6"
+    }
+  ]
+}

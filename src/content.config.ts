@@ -1,35 +1,19 @@
-// Import the glob loader
-import { glob } from "astro/loaders";
-// Import utilities from `astro:content`
-import { z, defineCollection } from "astro:content";
+// src/content.config.ts
+import { defineCollection, z } from "astro:content";
+import { MonsterSchema } from "./schemas/creatures/monster";
+import { NpcSchema } from "./schemas/creatures/npc";
 
-import { MonsterSchema, NpcSchema } from "./schemas/creatures";
-
-// Define a `loader` and `schema` for each collection
-const blog = defineCollection({
-    loader: glob({ pattern: '**/[^_]*.md', base: "./src/blog" }),
-    schema: z.object({
-      title: z.string(),
-      pubDate: z.date(),
-      description: z.string(),
-      author: z.string(),
-      image: z.object({
-        url: z.string(),
-        alt: z.string()
-      }),
-      tags: z.array(z.string())
-    })
+const monster = defineCollection({
+  type: "data",
+  schema: MonsterSchema,
 });
 
-// Export a single `collections` object to register your collection(s)
+const npc = defineCollection({
+  type: "data",
+  schema: NpcSchema,
+});
+
 export const collections = {
-  blog,
-  monster: defineCollection({
-    type: "data",
-    schema: MonsterSchema
-  }),
-  npc: defineCollection({
-    type: "data",
-    schema: NpcSchema
-  }),
+  monster,
+  npc,
 };

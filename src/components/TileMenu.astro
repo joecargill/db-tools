@@ -6,6 +6,7 @@ import "../styles/tile_menu.css";
 export interface TileInfo {
   label: string;
   href: string;
+  visible: boolean;
 }
 
 export interface Props {
@@ -16,7 +17,7 @@ const { tiles } = Astro.props;
 ---
 
 <div class="db-tile-menu">
-  {tiles.map(tile => (
+  {tiles.map(tile => tile.visible && (
     <Tile label={tile.label} href={tile.href} />
   ))}
 </div>

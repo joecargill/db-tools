@@ -1,0 +1,34 @@
+{
+  "type": "NPC",
+  "name": "Acolyte",
+  "description": "A novice cleric devoted to their deity, skilled in healing and support magic.",
+  "size": "NORMAL",
+  "move": 6,
+  "hp": 10,
+  "wp": 12,
+  "tags": [
+    "cleric",
+    "support"
+  ],
+  "skills": [
+    {
+      "name": "Healing",
+      "level": 12
+    },
+    {
+      "name": "Languages",
+      "level": 10
+    }
+  ],
+  "spells": [
+    "Treat Wound"
+  ],
+  "weapons": [
+    {
+      "name": "Dagger",
+      "level": 10,
+      "damage": "1d6",
+      "durability": 10
+    }
+  ]
+}

@@ -3,6 +3,8 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 
 import TagsList from "../../../components/TagsList.astro";
 
+import "../../../styles/creature.css";
+
 import { getCollection, getEntry } from "astro:content";
 import { slugFromId } from "../../../utils/slug";
 
@@ -19,7 +21,7 @@ const { id } = Astro.props;
 const npc = await getEntry("npc", id);
 
 // Shorthand
-const d = npc.data;
+const statblock = npc.data;
 
 const page = {
   title: "Bestiary",
@@ -29,17 +31,16 @@ const page = {
 
 <BaseLayout page={page}>
   <h3><strong>NPC</strong></h3>
-  <h2 class="db-green-dark">{d.name}</h2>
+  <h2 class="db-green-dark">{statblock.name}</h2>
   <hr>
-  <TagsList tags={d.tags} />
+  <TagsList tags={statblock.tags} />
   <br/>
-</div>
 
   <div class="page-columns">
 
-    {d.description && (
+    {statblock.description && (
       <div class="db-font-normal mb-4">
-        {d.description}
+        {statblock.description}
       </div>
     )}
 
@@ -48,15 +49,15 @@ const page = {
         <tr>
           <td>
             <term>Morale:</term>
-            <span class="d-inline-block">{d.morale ?? "—"}</span>
+            <span class="d-inline-block">{statblock.morale ?? "—"}</span>
           </td>
 
           <td colspan="2">
             <term>D. Bonus:</term>
             <span class="d-inline-block">
               {
-                d.damage_bonuses
-                  ? d.damage_bonuses.map(db => `${db.type}+${db.value}`).join(", ")
+                statblock.damage_bonuses
+                  ? statblock.damage_bonuses.map(db => `${db.type}+${db.value}`).join(", ")
                   : "—"
               }
             </span>
@@ -66,82 +67,82 @@ const page = {
         <tr>
           <td>
             <term>Move:</term>
-            <span class="d-inline-block">{d.move}</span>
+            <span class="d-inline-block">{statblock.move}</span>
           </td>
 
           <td colspan="2">
             <term>HP:</term>
-            <span class="d-inline-block">{d.hp}</span>
+            <span class="d-inline-block">{statblock.hp}</span>
 
             <term class="ms-2">WP:</term>
-            <span class="d-inline-block">{d.wp ?? "—"}</span>
+            <span class="d-inline-block">{statblock.wp ?? "—"}</span>
           </td>
         </tr>
 
-        {d.skills && (
+        {statblock.skills && (
           <tr>
             <td colspan="3">
               <term class="me-1">Skills:</term>
-              {d.skills.map((s, i) => (
+              {statblock.skills.map((s, i) => (
                 <>
                   <span class="d-inline-block capitalized">{s.name} {s.level}</span>
-                  {i < d.skills.length - 1 ? ", " : ""}
+                  {i < statblock.skills.length - 1 ? ", " : ""}
                 </>
               ))}
             </td>
           </tr>
         )}
 
-        {d.abilities && (
+        {statblock.abilities && (
           <tr>
             <td colspan="3">
               <term class="me-1">Abilities:</term>
-              {d.abilities.map((a, i) => (
+              {statblock.abilities.map((a, i) => (
                 <>
                   <span class="d-inline-block capitalized">{a}</span>
-                  {i < d.abilities.length - 1 ? ", " : ""}
+                  {i < statblock.abilities.length - 1 ? ", " : ""}
                 </>
               ))}
             </td>
           </tr>
         )}
 
-        {d.spells && (
+        {statblock.spells && (
           <tr>
             <td colspan="3">
               <term class="me-1">Spells:</term>
-              {d.spells.map((s, i) => (
+              {statblock.spells.map((s, i) => (
                 <>
                   <span class="d-inline-block" set:html={s}></span>
-                  {i < d.spells.length - 1 ? ", " : ""}
+                  {i < statblock.spells.length - 1 ? ", " : ""}
                 </>
               ))}
             </td>
           </tr>
         )}
 
-        {d.armors && (
+        {statblock.armors && (
           <tr>
             <td colspan="3">
               <term class="me-1">Typical Armor:</term>
-              {d.armors.map((a, i) => (
+              {statblock.armors.map((a, i) => (
                 <>
                   <span class="d-inline-block">{a.name} ({a.rating})</span>
-                  {i < d.armors.length - 1 ? ", " : ""}
+                  {i < statblock.armors.length - 1 ? ", " : ""}
                 </>
               ))}
             </td>
           </tr>
         )}
 
-        {d.weapons && (
+        {statblock.weapons && (
           <tr>
             <td colspan="3">
               <term class="me-1">Typical Weapons:</term>
-              {d.weapons.map((w, i) => (
+              {statblock.weapons.map((w, i) => (
                 <>
                   <span class="d-inline-block">{w.name} ({w.damage})</span>
-                  {i < d.weapons.length - 1 ? ", " : ""}
+                  {i < statblock.weapons.length - 1 ? ", " : ""}
                 </>
               ))}
             </td>
@@ -149,33 +150,33 @@ const page = {
         )}
       </table>
 
-      {d.resistance && (
+      {statblock.resistance && (
         <div class="mt-1">
           <p>
-            <b>Resistance:</b> {d.resistance}
+            <b>Resistance:</b> {statblock.resistance}
           </p>
         </div>
       )}
 
-      {d.immunity && (
+      {statblock.immunity && (
         <div>
           <p>
-            <b>Immunity:</b> {d.immunity}
+            <b>Immunity:</b> {statblock.immunity}
           </p>
         </div>
       )}
 
-      {d.weakness && (
+      {statblock.weakness && (
         <div>
           <p>
-            <b>Weakness:</b> {d.weakness}
+            <b>Weakness:</b> {statblock.weakness}
           </p>
         </div>
       )}
 
-      {d.effects && (
+      {statblock.effects && (
         <div>
-          {d.effects.map((e) => (
+          {statblock.effects.map((e) => (
             <p>
               <b>{e.name}:</b> {e.description}
             </p>
@@ -185,6 +186,4 @@ const page = {
 
     </div>
   </div>
-
-  <hr>
 </BaseLayout>

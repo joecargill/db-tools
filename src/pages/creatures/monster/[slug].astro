@@ -1,6 +1,10 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 
+import TagsList from "../../../components/TagsList.astro";
+
+import "../../../styles/creature.css";
+
 import { getCollection, getEntry } from "astro:content";
 import { slugFromId } from "../../../utils/slug";
 
@@ -16,16 +20,142 @@ export async function getStaticPaths() {
 const { id } = Astro.props;
 const monster = await getEntry("monster", id);
 
+const statblock = monster.data;
+
 const page = {
   title: "Bestiary",
   path: "/creatures",
-  metaTitle: monster.data.name
+  metaTitle: statblock.name
 }
 ---
 
 <BaseLayout page={page}>
   <h3><strong>MONSTER</strong></h3>
-  <h2 class="db-green-dark">{monster.data.name}</h2>
+  <h2 class="db-green-dark">{statblock.name}</h2>
+  <hr>
+  <TagsList tags={statblock.tags} />
+  <br/>
 
-  <p>{monster.data.description}</p>
+  <div class="page-columns">
+
+  {statblock.description && (
+    <div class="db-font-normal mb-4">
+      {statblock.description}
+    </div>
+  )}
+
+  <div class="stats-box | mb-5 mb-lg-4">
+    <table class="stats-table | db-font-normal mb-2">
+      <tr>
+        <td>
+          <term>Ferocity:</term>
+          <span class="d-inline-block">{statblock.ferocity}</span>
+        </td>
+
+        <td>
+          <term>Size:</term>
+          <span class="d-inline-block capitalized">{statblock.size}</span>
+        </td>
+
+        <td>
+          {statblock.morale && (
+            <>
+              <term>Morale:</term>
+              <span class="d-inline-block">{statblock.morale}</span>
+            </>
+          )}
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <term>Move:</term>
+          <span class="d-inline-block">{statblock.move}</span>
+        </td>
+
+        <td>
+          <term>Armor:</term>
+          <span class="d-inline-block">{statblock.armor ?? "—"}</span>
+        </td>
+
+        <td>
+          <term>HP:</term>
+          <span class="d-inline-block">{statblock.hp}</span>
+        </td>
+      </tr>
+
+      {statblock.skills && (
+        <tr>
+          <td colspan="3">
+            <term class="me-1">Skills:</term>
+            {statblock.skills.map((s, i) => (
+              <>
+                <span class="d-inline-block">{s.name} {s.level}</span>
+                {i < statblock.skills.length - 1 ? ", " : ""}
+              </>
+            ))}
+          </td>
+        </tr>
+      )}
+    </table>
+
+    {statblock.resistance && (
+      <div class="mt-1">
+        <p>
+          <span class="me-1"><b>Resistance:</b></span> {statblock.resistance}
+        </p>
+      </div>
+    )}
+
+    {statblock.immunity && (
+      <div>
+        <p>
+          <span class="me-1"><b>Immunity:</b></span> {statblock.immunity}
+        </p>
+      </div>
+    )}
+
+    {statblock.weakness && (
+      <div>
+        <p>
+          <span class="me-1"><b>Weakness:</b></span> {statblock.weakness}
+        </p>
+      </div>
+    )}
+
+    {statblock.effects && (
+      <div>
+        {statblock.effects.map((e) => (
+          <p>
+            <span class="me-1"><b>{e.name}:</b></span> {e.description}
+          </p>
+        ))}
+      </div>
+    )}
+  </div>
+
+  {statblock.attacks && (
+    <div>
+      <h3>Monster Attacks</h3>
+
+      <table class="attack-table | db-font-normal ">
+        <tr>
+          <th>D6</th>
+          <th>Attack</th>
+        </tr>
+
+        {statblock.attacks.map((atk) => (
+          <tr>
+            <td>{atk.result}</td>
+            <td>
+              <b>{atk.name}!</b> {atk.description}
+            </td>
+          </tr>
+        ))}
+      </table>
+    </div>
+  )}
+
+</div>
+
 </BaseLayout>

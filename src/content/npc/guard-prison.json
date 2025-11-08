@@ -1,0 +1,39 @@
+{
+  "type": "NPC",
+  "name": "Guard, Prison",
+  "morale": 6,
+  "size": "NORMAL",
+  "move": 6,
+  "hp": 15,
+  "tags": [
+    "humanoid",
+    "guard"
+  ],
+  "skills": [
+    {
+      "name": "Spot Hidden",
+      "level": 10
+    },
+    {
+      "name": "Awareness",
+      "level": 12
+    }
+  ],
+  "abilities": [
+    "Patrol Duty"
+  ],
+  "weapons": [
+    {
+      "name": "Spear",
+      "level": 10,
+      "damage": "1d10",
+      "durability": 10
+    }
+  ],
+  "armors": [
+    {
+      "name": "Studded Leather",
+      "rating": 3
+    }
+  ]
+}

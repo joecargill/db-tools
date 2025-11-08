@@ -1,0 +1,139 @@
+table {
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 0.25rem 0.5rem;
+  text-align: left;
+}
+
+term {
+  font-weight: bold;
+  font-family: "Colus";
+  margin-right: 0.25rem;
+  font-size: 0.8rem;
+}
+
+ul {
+  margin: 0.25rem 0 1rem 1.25rem;
+}
+
+.page-columns {
+  column-count: 1;         /* default: single column on mobile */
+      /* space between columns when desktop */
+}
+
+/* Desktop layout: two columns */
+@media (min-width: 1024px) {
+  .page-columns {
+    column-count: 2;
+    column-gap: 20px;
+  }
+
+  .page-columns > div,
+  .page-columns > table {
+    display: block; 
+    break-inside: avoid;     /* prevent splitting across columns */
+    width: 100%;             /* fill the column */
+  }
+}
+
+.attack-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.attack-table th,
+.attack-table td {
+  padding: 8px 10px;
+  border: none;
+  text-align: left;
+  vertical-align: top;
+  /* padding: .5rem 0.5rem; */
+}
+.attack-table th:first-child,
+.attack-table td:first-child {
+  white-space: nowrap;     /* prevent wrapping */
+  width: 3ch;              /* or whatever fits your D6 results */
+  min-width: 45px;         /* optional fallback */
+}
+@media (min-width: 1024px) {
+  .attack-table th,
+  .attack-table td {
+    padding: 8px 12px;
+  }
+}
+
+/* horizontal dividers only */
+.attack-table tr {
+  border-bottom: 1px solid #000;
+}
+
+.attack-table tr:first-child {
+  border-bottom: 2px solid #000;
+}
+
+.attack-table tr:last-child {
+  border-bottom: none;
+}
+
+/* alternating row backgrounds */
+.attack-table tr:nth-child(even) {
+  background-color: rgba(85, 34, 0, 0.13); /* change to any highlight color */
+}
+
+.attack-table tr:nth-child(odd) {
+  background-color: transparent;
+}
+
+
+.stats-box {
+  border: 1px solid #000;
+  padding: 10px;
+  background-color: #f6eab7;
+}
+@media (min-width: 1024px) {
+  .stats-box {
+    padding: 20px;
+  }
+}
+
+.stats-table {
+  /* width: 100%; */
+  border-collapse: collapse;
+  padding: 0;
+  margin: 0;
+}
+
+.stats-table th,
+.stats-table td {
+  padding: 4px 6px;
+  border: none;
+  text-align: left;
+}
+@media (min-width: 1024px) {
+  .stats-table th,
+  .stats-table td {
+    padding: 4px 12px;
+  }
+}
+
+.stats-table tr {
+  border-bottom: 1px solid #000;
+}
+
+.stats-table tr:first-child {
+  border-top: 1px solid #000;
+}
+
+/* alternating row backgrounds */
+.stats-table tr:nth-child(even) {
+  background-color: transparent;
+}
+
+.stats-table tr:nth-child(odd) {
+  background-color: rgba(85, 34, 0, 0.1);
+}

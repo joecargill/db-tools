@@ -7,6 +7,18 @@ import { slugFromId } from "../../utils/slug";
 const monsters = await getCollection("monster");
 const npcs = await getCollection("npc");
 
+const creatures = [...monsters, ...npcs];
+creatures.sort((a, b) => a.data.name.localeCompare(b.data.name));
+
+const grouped = creatures.reduce((acc, entry) => {
+  const first = entry.data.name[0].toUpperCase();
+
+  if (!acc[first]) acc[first] = [];
+  acc[first].push(entry);
+
+  return acc;
+}, {} as Record<string, typeof creatures>);
+
 const page = {
   title: "Bestiary",
   path: "/creatures"
@@ -15,26 +27,27 @@ const page = {
 
 <BaseLayout page={page}>
 
-  <h2>Monsters</h2>
-  <ul>
-    {monsters.map(m => (
-      <li>
-        <a href={`/creatures/monster/${slugFromId(m.id)}`}>
-          {m.data.name}
-        </a>
-      </li>
-    ))}
-  </ul>
+  <div class="index-columns">
+  {Object.keys(grouped)
+    .sort()
+    .map(letter => (
+      <section>
+        <div class="index-section">
+          <h2>{letter}</h2>
+          <ul>
+            {grouped[letter].map(entry => (
+              <li>
+                <a href={`/creatures/${entry.collection}/${slugFromId(entry.id)}`}>
+                  {entry.data.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    ))
+  }
+</div>
 
-  <h2>NPCs</h2>
-  <ul>
-    {npcs.map(n => (
-      <li>
-        <a href={`/creatures/npc/${slugFromId(n.id)}`}>
-          {n.data.name}
-        </a>
-      </li>
-    ))}
-  </ul>
 
 </BaseLayout>

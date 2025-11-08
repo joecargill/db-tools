@@ -1,0 +1,32 @@
+{
+  "type": "NPC",
+  "name": "Guard, Town",
+  "morale": 4,
+  "size": "NORMAL",
+  "move": 6,
+  "hp": 10,
+  "tags": [
+    "humanoid",
+    "guard"
+  ],
+  "skills": [
+    {
+      "name": "Awareness",
+      "level": 10
+    }
+  ],
+  "weapons": [
+    {
+      "name": "Spear",
+      "level": 8,
+      "damage": "1d10",
+      "durability": 10
+    }
+  ],
+  "armors": [
+    {
+      "name": "Leather",
+      "rating": 2
+    }
+  ]
+}
