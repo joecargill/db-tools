@@ -84,6 +84,9 @@ ul {
 .attack-table tr:nth-child(even) {
   background-color: rgba(85, 34, 0, 0.13); /* change to any highlight color */
 }
+.dark .attack-table tr:nth-child(even) {
+  background-color: rgba(53, 53, 53, 0.13); /* change to any highlight color */
+}
 
 .attack-table tr:nth-child(odd) {
   background-color: transparent;
@@ -99,6 +102,10 @@ ul {
   .stats-box {
     padding: 20px;
   }
+}
+.dark .stats-box {
+  background-color: #52514b;
+  color: var(--db-light)
 }
 
 .stats-table {
@@ -136,4 +143,7 @@ ul {
 
 .stats-table tr:nth-child(odd) {
   background-color: rgba(85, 34, 0, 0.1);
+}
+.dark .stats-table tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.109);
 }

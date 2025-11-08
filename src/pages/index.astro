@@ -7,7 +7,7 @@ const tiles = [
   { label: "Bestiary", href: "/creatures", visible: true },
   { label: "Magic Items", href: "/magic-items", visible: false },
   { label: "Spells", href: "/spells", visible: false },
-  { label: "Character Sheet", href: "/character-sheet", visible: true}
+  { label: "Character Sheet", href: "/character-sheet", visible: false}
 ];
 
 const page = {
@@ -18,5 +18,4 @@ const page = {
 
 <BaseLayout page={page}>
   <TileMenu tiles={tiles} />
-  
 </BaseLayout>
