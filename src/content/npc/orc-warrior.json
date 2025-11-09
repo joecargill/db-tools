@@ -10,7 +10,6 @@
   "immunity": "",
   "weakness": "Fire",
   "tags": [
-    "orc",
     "humanoid"
   ],
   "skills": [
@@ -40,13 +39,13 @@
     {
       "name": "Longsword",
       "level": 12,
-      "damage": "2d8",
+      "damage_dice": {"type": "d12", "count": 1},
       "durability": 15
     },
     {
       "name": "Large Shield",
       "level": 10,
-      "damage": "1d8",
+      "damage_dice": {"type": "d8", "count": 1},
       "durability": 12
     }
   ],

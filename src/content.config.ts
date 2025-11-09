@@ -1,5 +1,5 @@
-// src/content.config.ts
-import { defineCollection, z } from "astro:content";
+import { defineCollection } from "astro:content";
+
 import { MonsterSchema } from "./schemas/creatures/monster";
 import { NpcSchema } from "./schemas/creatures/npc";
 

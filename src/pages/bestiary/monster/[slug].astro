@@ -48,19 +48,19 @@ const page = {
     <table class="stats-table | db-font-normal mb-2">
       <tr>
         <td>
-          <term>Ferocity:</term>
+          <label>Ferocity:</label>
           <span class="d-inline-block">{statblock.ferocity}</span>
         </td>
 
         <td>
-          <term>Size:</term>
+          <label>Size:</label>
           <span class="d-inline-block capitalized">{statblock.size}</span>
         </td>
 
         <td>
           {statblock.morale && (
             <>
-              <term>Morale:</term>
+              <label>Morale:</label>
               <span class="d-inline-block">{statblock.morale}</span>
             </>
           )}
@@ -69,30 +69,29 @@ const page = {
 
       <tr>
         <td>
-          <term>Move:</term>
+          <label>Move:</label>
           <span class="d-inline-block">{statblock.move}</span>
         </td>
 
         <td>
-          <term>Armor:</term>
+          <label>Armor:</label>
           <span class="d-inline-block">{statblock.armor ?? "—"}</span>
         </td>
 
         <td>
-          <term>HP:</term>
+          <label>HP:</label>
           <span class="d-inline-block">{statblock.hp}</span>
         </td>
       </tr>
 
-      {statblock.skills && (
+      {statblock.skills && statblock.skills.length > 0 && (
         <tr>
           <td colspan="3">
-            <term class="me-1">Skills:</term>
-            {statblock.skills.map((s, i) => (
-              <>
-                <span class="d-inline-block">{s.name} {s.level}</span>
-                {i < statblock.skills.length - 1 ? ", " : ""}
-              </>
+            <label class="me-1">Skills:</label>
+            {statblock.skills.map((skill, i) => (
+              <span class="d-inline-block capitalized">
+                {skill.name} {skill.level}{i < statblock.skills.length - 1 ? ", " : ""}
+              </span>
             ))}
           </td>
         </tr>

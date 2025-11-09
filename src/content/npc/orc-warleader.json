@@ -7,8 +7,7 @@
   "hp": 14,
   "wp": 10,
   "tags": [
-    "humanoid",
-    "orc"
+    "humanoid"
   ],
   "skills": [
     {
@@ -20,7 +19,7 @@
     {
       "name": "Axe",
       "level": 8,
-      "damage": "1d6",
+      "damage_dice": {"type": "d6", "count": 1},
       "durability": 10
     }
   ]

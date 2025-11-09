@@ -6,8 +6,7 @@
   "move": 6,
   "hp": 10,
   "tags": [
-    "humanoid",
-    "guard"
+    "humanoid"
   ],
   "skills": [
     {
@@ -19,7 +18,7 @@
     {
       "name": "Spear",
       "level": 8,
-      "damage": "1d10",
+      "damage_dice": {"type": "d10", "count": 1},
       "durability": 10
     }
   ],

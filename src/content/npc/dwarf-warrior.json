@@ -7,9 +7,7 @@
   "hp": 12,
   "wp": 10,
   "tags": [
-    "humanoid",
-    "dwarf",
-    "mountains"
+    "humanoid"
   ],
   "skills": [
     {
@@ -21,13 +19,13 @@
     {
       "name": "Battle Axe",
       "level": 8,
-      "damage": "1d8",
+      "damage_dice": {"type": "d6", "count": 1},
       "durability": 10
     },
     {
       "name": "Warhammer",
       "level": 6,
-      "damage": "1d6",
+      "damage_dice": {"type": "d6", "count": 1},
       "durability": 10
     }
   ]

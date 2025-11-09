@@ -38,7 +38,7 @@
     {
       "name": "Staff",
       "level": 12,
-      "damage": "1d10",
+      "damage_dice": {"type": "d8", "count": 1},
       "durability": 10
     }
   ]

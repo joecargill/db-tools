@@ -1,0 +1,58 @@
+{
+  "type": "NPC",
+  "name": "Skeleton",
+  "description": "A humanoid skeleton that has risen from the dead due to some foul necromantic magic.",
+  "morale": 12,
+  "size": "NORMAL",
+  "move": 6,
+  "hp": 8,
+  "resistance": "Piercing, Slashing",
+  "immunity": "Poison",
+  "weakness": "Bludgeoning",
+  "tags": [
+    "humanoid",
+    "undead"
+  ],
+  "skills": [
+    {
+      "name": "Evade",
+      "level": 8
+    },
+    {
+      "name": "Awareness",
+      "level": 6
+    }
+  ],
+  "effects": [
+    {
+      "name": "Necromantic Puppet",
+      "description": "If the source of the magic that granted undeath is removed, the skeleton is immediately destroyed."
+    }
+  ],
+  "armors": [
+    {
+      "name": "Chainmail",
+      "rating": 4
+    }
+  ],
+  "weapons": [
+    {
+      "name": "Scimitar",
+      "level": 10,
+      "damage_dice": {
+        "count": 1,
+        "type": "d6"
+      },
+      "durability": 12
+    },
+    {
+      "name": "Long Spear",
+      "level": 10,
+      "damage_dice": {
+        "count": 2,
+        "type": "d8"
+      },
+      "durability": 9
+    }
+  ]
+}

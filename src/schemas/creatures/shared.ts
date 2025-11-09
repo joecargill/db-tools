@@ -1,34 +1,18 @@
-import { z } from "astro:content";
+import { z } from "zod";
 
-export const SkillNameSchema = z.enum([
-  "Acrobatics",
-  "Awareness",
-  "Bartering",
-  "Beast Lore",
-  "Bluffing",
-  "Bushcraft",
-  "Crafting",
-  "Evade",
-  "Healing",
-  "Hunting & Fishing",
-  "Languages",
-  "Myths & Legends",
-  "Performance",
-  "Persuasion",
-  "Riding",
-  "Seamanship",
-  "Sleight of Hand",
-  "Sneaking",
-  "Spot Hidden",
-  "Swimming",
-  "Animism",
-  "Mentalism",
-  "Elementalism"
-]);
+import { SKILL_NAMES } from "../../data/skillNames";
+import { DICE_TYPES } from "../../data/diceTypes";
 
+export const SkillNameSchema = z.enum(SKILL_NAMES);
 export const SkillSchema = z.object({
   name: SkillNameSchema,
   level: z.number().int(),
+});
+
+export const DiceTypeSchema = z.enum(DICE_TYPES);
+export const DiceSchema = z.object({
+  type: DiceTypeSchema,
+  count: z.number().int(),
 });
 
 export const EffectSchema = z.object({

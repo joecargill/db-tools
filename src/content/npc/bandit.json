@@ -1,0 +1,40 @@
+{
+  "type": "NPC",
+  "name": "Bandit",
+  "description": "Thieves who live by robbery.",
+  "morale": 8,
+  "size": "NORMAL",
+  "move": 8,
+  "hp": 4,
+  "tags": [
+    "humanoid"
+  ],
+  "skills": [
+    {
+      "name": "Evade",
+      "level": 6
+    }
+  ],
+  "effects": [
+    {
+      "name": "Trickery ",
+      "description": "Use disguise or trickery to surprise victims."
+    }
+  ],
+  "abilities": [],
+  "weapons": [
+    {
+      "name": "Shortsword",
+      "level": 12,
+      "damage_dice": {"type": "d6", "count": 1},
+      "durability": 4
+    }
+  ],
+  "armors": [
+    {
+      "name": "Leather",
+      "rating": 2
+    }
+  ],
+  "damage_bonuses": []
+}

@@ -1,5 +1,6 @@
-import { z } from "astro:content";
-import { SkillSchema, EffectSchema } from "./shared";
+import { z } from "zod";
+
+import { SkillSchema, DiceSchema, EffectSchema } from "./shared";
 
 export const NpcSchema = z.object({
   type: z.literal("NPC"),
@@ -26,7 +27,7 @@ export const NpcSchema = z.object({
     z.object({
       name: z.string(),
       level: z.number().int(),
-      damage: z.string(),
+      damage_dice: DiceSchema,
       durability: z.number().int(),
     })
   ).optional(),

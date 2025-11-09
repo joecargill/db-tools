@@ -7,8 +7,7 @@
   "hp": 8,
   "wp": 8,
   "tags": [
-    "humanoid",
-    "goblin"
+    "humanoid"
   ],
   "skills": [
     {
@@ -20,13 +19,13 @@
     {
       "name": "Short Sword",
       "level": 6,
-      "damage": "1d4",
+      "damage_dice": {"type": "d4", "count": 1},
       "durability": 10
     },
     {
       "name": "Short Bow",
       "level": 6,
-      "damage": "1d4",
+      "damage_dice": {"type": "d4", "count": 1},
       "durability": 10
     }
   ]

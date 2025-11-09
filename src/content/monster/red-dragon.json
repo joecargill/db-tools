@@ -12,9 +12,7 @@
   "immunity": "Immune to fear and PERSUASION.",
   "weakness": "Red dragons have a weakness to cold temperatures. All cold damage ignores armor.",
   "tags": [
-    "dragon",
-    "cave",
-    "mountains"
+    "dragon"
   ],
   "skills": [
     { "name": "Spot Hidden", "level": 10 },

@@ -10,7 +10,7 @@ th, td {
   text-align: left;
 }
 
-term {
+.term {
   font-weight: bold;
   font-family: "Colus";
   margin-right: 0.25rem;

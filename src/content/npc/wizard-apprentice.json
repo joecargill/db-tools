@@ -36,7 +36,7 @@
     {
       "name": "Dagger",
       "level": 10,
-      "damage": "1d6",
+      "damage_dice": {"type": "d8", "count": 1},
       "durability": 10
     }
   ]
