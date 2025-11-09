@@ -13,7 +13,8 @@
   "weakness": "Red dragons have a weakness to cold temperatures. All cold damage ignores armor.",
   "tags": [
     "dragon",
-    "fire"
+    "cave",
+    "mountains"
   ],
   "skills": [
     { "name": "Spot Hidden", "level": 10 },

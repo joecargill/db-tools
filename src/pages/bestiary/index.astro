@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
+import TagsFilters from "../../components/TagsFilters.astro";
+
 import { getCollection } from "astro:content";
 import { slugFromId } from "../../utils/slug";
 
@@ -19,6 +21,15 @@ const grouped = creatures.reduce((acc, entry) => {
   return acc;
 }, {} as Record<string, typeof creatures>);
 
+const allTags = [
+  ...new Set(
+    creatures
+      .flatMap((c) => c.data.tags ?? [])
+      .filter(Boolean)
+      .sort((a, b) => a.localeCompare(b))
+  ),
+];
+
 const page = {
   title: "Bestiary",
   path: "/bestiary"
@@ -27,27 +38,29 @@ const page = {
 
 <BaseLayout page={page}>
 
-  <div class="index-columns">
-  {Object.keys(grouped)
-    .sort()
-    .map(letter => (
-      <section>
-        <div class="index-section">
-          <h2>{letter}</h2>
-          <ul>
-            {grouped[letter].map(entry => (
-              <li>
-                <a href={`/bestiary/${entry.collection}/${slugFromId(entry.id)}`}>
-                  {entry.data.name}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-    ))
-  }
-</div>
+  <TagsFilters tags={allTags} />
+  <br/>
 
+  <div class="index-columns">
+    {Object.keys(grouped)
+      .sort()
+      .map(letter => (
+        <section>
+          <div class="index-section">
+            <h2>{letter}</h2>
+            <ul>
+              {grouped[letter].map(entry => (
+                <li>
+                  <a href={`/bestiary/${entry.collection}/${slugFromId(entry.id)}`}>
+                    {entry.data.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      ))
+    }
+  </div>
 
 </BaseLayout>

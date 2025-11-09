@@ -104,6 +104,16 @@ p {
   border-bottom: 1px solid #fff;
 }
 
+.index-section a:hover {
+  color: var(--db-green-dark);
+  text-decoration: underline;
+}
+
+.dark .index-section a:hover {
+  color: var(--db-green-light);
+}
+
+
 
 .index-section ul {
   list-style: none;

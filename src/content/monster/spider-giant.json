@@ -8,7 +8,10 @@
   "hp": 18,
   "tags": [
     "beast",
-    "arachnid"
+    "arachnid",
+    "insect",
+    "cave",
+    "jungle"
   ],
   "attacks": [
     {

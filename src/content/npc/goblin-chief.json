@@ -7,7 +7,8 @@
   "hp": 8,
   "wp": 8,
   "tags": [
-    "humanoid"
+    "humanoid",
+    "goblin"
   ],
   "skills": [
     {

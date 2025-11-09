@@ -1,29 +1,98 @@
 ---
-import { getCollection } from "astro:content";
-
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
-import PageList from "../../components/PageList.astro";
+import TagsFilters from "../../components/TagsFilters.astro";
+
+import { getCollection } from "astro:content";
+import { slugFromId } from "../../utils/slug";
 
 export async function getStaticPaths() {
-  const allPosts = await getCollection("blog");
-  const uniqueTags = [...new Set(allPosts.map((post: any) => post.data.tags).flat())];
+  const monsters = await getCollection("monster");
+  const npcs = await getCollection("npc");
 
-  return uniqueTags.map((tag) => {
-    const filteredPosts = allPosts.filter((post: any) =>
-      post.data.tags.includes(tag)
+  const allCreatures = [...monsters, ...npcs];
+
+  // Gather ALL unique tags across creatures
+  const uniqueTags = new Set<string>();
+  for (const c of allCreatures) {
+    c.data.tags?.forEach((t) => uniqueTags.add(t));
+  }
+
+  // Build static paths
+  return [...uniqueTags].map((tag) => {
+    const filteredCreatures = allCreatures.filter((c) =>
+      c.data.tags?.includes(tag)
     );
+
     return {
       params: { tag },
-      props: { posts: filteredPosts },
+      props: { filteredCreatures, allCreatures },
     };
   });
 }
 
 const { tag } = Astro.params;
-const { posts } = Astro.props;
+const { filteredCreatures, allCreatures } = Astro.props;
+
+// Sort alphabetically
+filteredCreatures.sort((a, b) => a.data.name.localeCompare(b.data.name));
+
+// Group alphabetically
+const grouped = filteredCreatures.reduce((acc, entry) => {
+  const first = entry.data.name[0].toUpperCase();
+  if (!acc[first]) acc[first] = [];
+  acc[first].push(entry);
+  return acc;
+}, {} as Record<string, typeof filteredCreatures>);
+
+const allTags = [
+  ...new Set(
+    allCreatures
+      .flatMap((c) => c.data.tags ?? [])
+      .filter(Boolean)
+      .sort((a, b) => a.localeCompare(b))
+  ),
+];
+
+function capitalize(str: string) {
+  return str.replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+const page = {
+  title: "Bestiary",
+  path: `/bestiary`,
+  metaTitle: `${capitalize(tag)} | Bestiary`
+};
 ---
-<BaseLayout page={tag}>
-  <p>Posts tagged with {tag}</p>
-  <PageList pages={posts} />
+
+<BaseLayout page={page}>
+
+  <TagsFilters tags={allTags} current={tag}/>
+  <br/>
+
+  {filteredCreatures.length === 0 ? (
+    <p>No filteredCreatures have this tag.</p>
+  ) : (
+    <div class="index-columns">
+      {Object.keys(grouped)
+        .sort()
+        .map(letter => (
+          <section>
+            <div class="index-section">
+              <h2>{letter}</h2>
+              <ul>
+                {grouped[letter].map(entry => (
+                  <li>
+                    <a href={`/bestiary/${entry.collection}/${slugFromId(entry.id)}`}>
+                      {entry.data.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        ))}
+    </div>
+  )}
+
 </BaseLayout>

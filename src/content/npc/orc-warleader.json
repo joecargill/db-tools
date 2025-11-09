@@ -7,7 +7,8 @@
   "hp": 14,
   "wp": 10,
   "tags": [
-    "humanoid"
+    "humanoid",
+    "orc"
   ],
   "skills": [
     {

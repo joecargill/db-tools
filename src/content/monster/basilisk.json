@@ -8,7 +8,9 @@
   "hp": 20,
   "tags": [
     "beast",
-    "reptile"
+    "reptile",
+    "magical",
+    "cave"
   ],
   "attacks": [
     {

@@ -6,6 +6,11 @@
   "size": "LARGE",
   "move": 20,
   "hp": 20,
+  "tags": [
+    "beast",
+    "insect",
+    "cave"
+  ],
   "attacks": [
     {
       "result": "1-2",

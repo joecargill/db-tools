@@ -7,10 +7,10 @@
   margin: 0.25em;
   /* border: solid 1px var(--db-green-dark); */
   border-radius: .25em;
-  padding: 0 0.4em;
+  padding: 0.2em 0.4em 0.2em 0.6em;
   font-size: 0.8rem;
   font-weight: 600;
-  letter-spacing: 0.25rem;
+  letter-spacing: 0.1rem;
   background-color: var(--db-green-dark);
   text-transform: uppercase;
 
@@ -21,8 +21,40 @@
 .dark .tag {
   /* border: solid 1px var(--db-green-light); */
   background-color: var(--db-green-light);
+}
+
+.tag--selected {
+  background-color: var(--db-red);
+}
+.dark .tag--selected {
+  /* background-color: var(--db-light); */
+  background-color: var(--db-red);
+}
+
+.tag-filter {
+  background-color: var(--db-light);
+  border: solid 1px;
 
   a {
     color: var(--db-dark);
   }
+}
+.dark .tag-filter {
+  background-color: var(--db-dark);
+
+  a {
+    color: var(--db-light);
+  }
+}
+.tag-filter--selected {
+  background-color: var(--db-green-dark);
+  border-color: var(--db-green-dark);
+
+  a {
+    color: var(--db-light);
+  }
+}
+.dark .tag-filter--selected {
+  background-color: var(--db-green-light);
+  border-color: var(--db-green-light);
 }

@@ -7,8 +7,9 @@
   "hp": 10,
   "wp": 12,
   "tags": [
-    "cleric",
-    "support"
+    "religion",
+    "humanoid",
+    "spellcaster"
   ],
   "skills": [
     {

@@ -8,7 +8,9 @@
   "hp": 16,
   "tags": [
     "beast",
-    "reptile"
+    "reptile",
+    "jungle",
+    "desert"
   ],
   "attacks": [
     {

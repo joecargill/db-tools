@@ -3,13 +3,14 @@ import "../styles/tags.css";
 
 // Ensure tags is always an array
 const tags = Array.isArray(Astro.props.tags) ? Astro.props.tags : [];
+const current = Astro.props.current;
 ---
 
 {tags.length > 0 && (
   <div class="tags">
     {tags.map((tag) => (
-      <p class="tag">
-        <a href={`/tags/${tag}`}>{tag}</a>
+      <p class={!!current && current == tag ? "tag tag-filter tag-filter--selected" : "tag tag-filter"}>
+        <a href={!!current && current == tag ? "/bestiary" : `/tags/${tag}`}>{tag}</a>
       </p>
     ))}
   </div>

@@ -8,8 +8,8 @@
   "hp": 20,
   "wp": 10,
   "tags": [
-    "wizard",
-    "humanoid"
+    "humanoid",
+    "spellcaster"
   ],
   "skills": [
     {
