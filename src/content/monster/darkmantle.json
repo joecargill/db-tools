@@ -1,66 +1,41 @@
 {
   "type": "MONSTER",
   "name": "Darkmantle",
-  "description": "",
-  "morale": 12,
-  "ferocity": 3,
-  "size": "HUGE",
+  "description": "Floating black squid-like entities, darkmantles tend to nest in dark, damp environments such as subterranean caves.",
+  "morale": 4,
+  "ferocity": 1,
+  "size": "NORMAL",
   "move": 12,
-  "hp": 84,
-  "armor": 6,
-  "resistance": "All piercing damage is halved (rounded up).",
-  "immunity": "Immune to fear and PERSUASION.",
-  "weakness": "Red dragons have a weakness to cold temperatures. All cold damage ignores armor.",
+  "hp": 6,
   "tags": [
-    "dragon"
-  ],
-  "skills": [
-    { "name": "Spot Hidden", "level": 10 },
-    { "name": "Evade", "level": 6 },
-    { "name": "Awareness", "level": 18 },
-    { "name": "Myths & Legends", "level": 14 },
-    { "name": "Hunting & Fishing", "level": 12 }
+    "aberration",
+    "magical"
   ],
   "effects": [
     {
-      "name": "Wings",
-      "description": "The mighty wings of the dragon allow it to move freely through the air."
+      "name": "Floating",
+      "description": "Darkmantles can freely fly due to their innate magical properties."
     },
     {
-      "name": "Persuadable",
-      "description": "Unlike other monsters, ghosts can usually be PERSUADED, albeit with a bane on the roll."
+      "name": "Darkness Aura ",
+      "description": "An aura of shadow surrounds the darkmantle. Creatures within 2m see as if in darkness, and any light sources (e.g. torch) within 2m are extinguished instantly."
     }
   ],
   "attacks": [
     {
-      "result": "1",
-      "name": "Dragon Wind",
-      "description": "The dragon flaps its great wings and creates a powerful gale that strikes all adventurers within 10 meters. Any loose objects and creatures of up to human size in the whirlwind are hurled 2D6 meters, take the same amount of bludgeoning damage, and land prone."
-    },
-    {
-      "result": "2",
-      "name": "Fiery Breath",
-      "description": "The dragon exhales a cone of fire, dealing 10D6 fire damage to all targets in range."
-    },
-    {
-      "result": "3",
-      "name": "Tail Sweep",
-      "description": "The dragon swings its tail in a wide arc, dealing 2D10 bludgeoning damage to anyone behind it."
-    },
-    {
-      "result": "4",
-      "name": "Claw Swipe",
-      "description": "A vicious swipe with its claws, dealing 2D8 slashing damage."
+      "result": "1-4",
+      "name": "Bite",
+      "description": "Melee attack with its fangs, dealing 1d6 piercing damage."
     },
     {
       "result": "5",
-      "name": "Bite",
-      "description": "A powerful bite that deals 3D8 piercing damage and has a chance to knock the target prone."
+      "name": "Face Hug",
+      "description": "Attempts to grapple a melee target's head (Brawling to resist). A target grappled in this way is blinded and suffocating. A suffocating target must make a CON check each round to hold their breath, on failure taking d6 damage this and every round after. Can be dodged."
     },
     {
       "result": "6",
-      "name": "Roar",
-      "description": "The dragon roars, causing all enemies within 20 meters to make a fear check or become frightened for 1 round."
+      "name": "Extend Darkness Aura",
+      "description": "The darkmantle projects its darkness aura outward, causing all sources of light within 20 meters to be extinguished."
     }
   ]
 }
