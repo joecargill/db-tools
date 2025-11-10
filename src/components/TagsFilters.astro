@@ -10,7 +10,7 @@ const current = Astro.props.current;
   <div class="tags">
     {tags.map((tag) => (
       <p class={!!current && current == tag ? "tag tag-filter tag-filter--selected" : "tag tag-filter"}>
-        <a href={!!current && current == tag ? "/bestiary" : `/tags/${tag}`}>{tag}</a>
+        <a href={!!current && current == tag ? "/bestiary" : `/bestiary/tags/${tag}`}>{tag}</a>
       </p>
     ))}
   </div>

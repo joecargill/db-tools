@@ -9,7 +9,7 @@ const tags = Array.isArray(Astro.props.tags) ? Astro.props.tags : [];
   <div class="tags">
     {tags.map((tag) => (
       <p class="tag">
-        <a href={`/tags/${tag}`}>{tag}</a>
+        <a href={`/bestiary/tags/${tag}`}>{tag}</a>
       </p>
     ))}
   </div>

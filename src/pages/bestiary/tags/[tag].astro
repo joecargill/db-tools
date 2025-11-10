@@ -1,10 +1,10 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-
-import TagsFilters from "../../components/TagsFilters.astro";
-
 import { getCollection } from "astro:content";
-import { slugFromId } from "../../utils/slug";
+import { slugFromId } from "../../../utils/slug";
+
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+import TagsFilters from "../../../components/TagsFilters.astro";
 
 export async function getStaticPaths() {
   const monsters = await getCollection("monster");
