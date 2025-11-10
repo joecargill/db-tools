@@ -1,13 +1,14 @@
-export default function TextInput({ label, value, onChange, width }) {
+export default function TextInput({ className, label, value, onChange, size }) {
   return (
-    <label className="input-row">
-      <span className="<label">{label}</span>
+    <div className={`input-row ${className}`}>
+      <span className="term">{label}</span>
       <input
         type="text"
-        className={`builder-input-inline ${width || ""}`}
+        className={`builder-input-inline`}
         value={value}
         onChange={(e) => onChange(e.target.value)}
+        size={size}
       />
-    </label>
+    </div>
   );
 }

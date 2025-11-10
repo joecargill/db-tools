@@ -17,6 +17,10 @@ th, td {
   font-size: 0.8rem;
 }
 
+.statblock-label {
+  font-weight: 600;
+}
+
 ul {
   margin: 0.25rem 0 1rem 1.25rem;
 }

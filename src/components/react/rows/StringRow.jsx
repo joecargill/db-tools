@@ -1,14 +1,15 @@
 import React from "react";
 
-export default function StringRow({ value, onChange }) {
+export default function StringRow({ className, value, onChange, size }) {
   return (
-    <div className="cb-row">
+    <div className={`cb-row ${className}`}>
       <input
         type="text"
         className="cb-input"
         value={value ?? ""}
         onChange={(e) => onChange(e.target.value)}
-        placeholder="Tag"
+        placeholder=""
+        size={size}
       />
     </div>
   );

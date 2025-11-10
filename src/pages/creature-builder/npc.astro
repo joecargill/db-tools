@@ -2,23 +2,23 @@
 
 import { getCollection } from "astro:content";
 
-import BaseLayout from "../../../layouts/BaseLayout.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 
-import NpcBuilder from "../../../components/react/NpcBuilder.jsx";
+import NpcBuilder from "../../components/react/NpcBuilder.jsx";
 
-import "../../../styles/creature.css";
+import "../../styles/creature.css";
 
 const page = {
-  title: "Bestiary",
+  title: "Creature Builder",
   path: "/bestiary",
-  metaTitle: "NPC Builder | Bestiary"
+  metaTitle: "New NPC | Creature Builder"
 };
 
 const npcs = await getCollection("npc");
 ---
 
 <BaseLayout page={page}>
-  <h2 class="db-green-dark">NPC Builder</h2>
+  <h3 class="db-green-dark">New NPC</h3>
   <hr />
 
   <NpcBuilder

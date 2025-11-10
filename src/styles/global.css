@@ -135,3 +135,12 @@ p {
     column-count: 1;
   }
 }
+
+.d-inline-block {
+  display: inline-block !important;
+}
+
+.no-break {
+  display: inline-block;
+  white-space: nowrap;
+}

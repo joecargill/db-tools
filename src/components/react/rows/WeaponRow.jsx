@@ -23,12 +23,12 @@ export default function WeaponRow({ weapon, onChange }) {
   return (
     <div className="row-flex">
       <TextInput
-        label="Name"
         value={weapon.name}
         onChange={(v) => update("name", v)}
+        size={12}
       />
       <NumberInput
-        label="Lvl"
+        label="Level"
         value={weapon.level}
         onChange={(v) => update("level", v)}
         min={1}
@@ -40,9 +40,10 @@ export default function WeaponRow({ weapon, onChange }) {
         value={weapon.damage_dice.count}
         min={1}
         max={9}
-        width={1}
+        size={1}
         onChange={(v) => updateNested("damage_dice", "count", v)}
       />
+      x
       <SelectInput
         value={weapon.damage_dice.type}
         options={DICE_TYPES}

@@ -7,12 +7,14 @@ export default function RepeatingList({
   onAdd,
   onChange,
   onRemove,
+  maxItems,
 }) {
   return (
     <div className="repeating-inline-list">
       <label className="me-1">{title}:</label>
 
       {items.length === 0 && <span className="dash">—</span>}
+      
 
       {items.map((item, index) => (
         <span key={index} className="inline-item">
@@ -32,9 +34,11 @@ export default function RepeatingList({
       ))}
 
       {/* add button */}
-      <button type="button" className="inline-add" onClick={onAdd}>
-        +
-      </button>
+      {(maxItems === undefined || items.length != maxItems) && (
+        <button type="button" className="inline-add" onClick={onAdd}>
+          +
+        </button>
+      )}
     </div>
   );
 }

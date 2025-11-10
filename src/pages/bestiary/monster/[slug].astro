@@ -46,56 +46,58 @@ const page = {
 
   <div class="stats-box | mb-5 mb-lg-4">
     <table class="stats-table | db-font-normal mb-2">
-      <tr>
-        <td>
-          <label>Ferocity:</label>
-          <span class="d-inline-block">{statblock.ferocity}</span>
-        </td>
-
-        <td>
-          <label>Size:</label>
-          <span class="d-inline-block capitalized">{statblock.size}</span>
-        </td>
-
-        <td>
-          {statblock.morale && (
-            <>
-              <label>Morale:</label>
-              <span class="d-inline-block">{statblock.morale}</span>
-            </>
-          )}
-        </td>
-      </tr>
-
-      <tr>
-        <td>
-          <label>Move:</label>
-          <span class="d-inline-block">{statblock.move}</span>
-        </td>
-
-        <td>
-          <label>Armor:</label>
-          <span class="d-inline-block">{statblock.armor ?? "—"}</span>
-        </td>
-
-        <td>
-          <label>HP:</label>
-          <span class="d-inline-block">{statblock.hp}</span>
-        </td>
-      </tr>
-
-      {statblock.skills && statblock.skills.length > 0 && (
+      <tbody>
         <tr>
-          <td colspan="3">
-            <label class="me-1">Skills:</label>
-            {statblock.skills.map((skill, i) => (
-              <span class="d-inline-block capitalized">
-                {skill.name} {skill.level}{i < statblock.skills.length - 1 ? ", " : ""}
-              </span>
-            ))}
+          <td>
+            <label class="statblock-label">Ferocity:</label>
+            <span class="d-inline-block">{statblock.ferocity}</span>
+          </td>
+
+          <td>
+            <label class="statblock-label">Size:</label>
+            <span class="d-inline-block capitalized">{statblock.size}</span>
+          </td>
+
+          <td>
+            {statblock.morale && (
+              <>
+                <label class="statblock-label">Morale:</label>
+                <span class="d-inline-block">{statblock.morale}</span>
+              </>
+            )}
           </td>
         </tr>
-      )}
+
+        <tr>
+          <td>
+            <label class="statblock-label">Move:</label>
+            <span class="d-inline-block">{statblock.move}</span>
+          </td>
+
+          <td>
+            <label class="statblock-label">Armor:</label>
+            <span class="d-inline-block">{statblock.armor ?? "—"}</span>
+          </td>
+
+          <td>
+            <label class="statblock-label">HP:</label>
+            <span class="d-inline-block">{statblock.hp}</span>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="3">
+            <label class="statblock-label me-1">Skills:</label>
+            <span class="no-break">Dodge & Parry 15,</span>
+            {statblock.skills && statblock.skills.map((skill, i) => (
+              <span>
+                <span class="capitalized no-break">{skill.name} {skill.level}</span>{i < statblock.skills.length - 1 ? ", " : ", "}
+              </span>
+            ))}
+            <span class="no-break">Untrained 5</span>
+          </td>
+        </tr>
+      </tbody>
     </table>
 
     {statblock.resistance && (

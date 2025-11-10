@@ -1,0 +1,45 @@
+{
+  "type": "NPC",
+  "name": "Skeleton, Wizard",
+  "description": "A humanoid skeleton of a long dead wizard, that has risen from the dead due to some foul necromantic magic.",
+  "morale": 12,
+  "size": "NORMAL",
+  "move": 6,
+  "hp": 8,
+  "wp": 12,
+  "resistance": "Piercing, Slashing",
+  "immunity": "Poison",
+  "weakness": "Bludgeoning",
+  "tags": [
+    "humanoid",
+    "undead",
+    "spellcaster"
+  ],
+  "skills": [
+    {
+      "name": "Elementalism",
+      "level": 14
+    }
+  ],
+  "effects": [
+    {
+      "name": "Necromantic Puppet",
+      "description": "If the source of the magic that granted undeath is removed, the skeleton is immediately destroyed."
+    }
+  ],
+  "spells": [
+    "Magic Missile",
+    "Flame Tongue"
+  ],
+  "weapons": [
+    {
+      "name": "Staff",
+      "level": 10,
+      "damage_dice": {
+        "type": "d8",
+        "count": 1
+      },
+      "durability": 9
+    }
+  ]
+}

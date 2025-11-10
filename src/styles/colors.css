@@ -20,6 +20,14 @@
   --color-tile-bg-hover: #e4e4e4;
 }
 
+.bg-none {
+  background: none;
+}
+
+.bg-statblock-light {
+  background: var(--db-statblock-light);
+}
+
 /* Optional: Dark mode overrides */
 /* @media (prefers-color-scheme: dark) {
   :root {

@@ -47,103 +47,104 @@ const page = {
 
     <div class="stats-box | mb-5 mb-lg-4">
       <table class="stats-table | db-font-normal">
-        <tr>
-          <td>
-            <label>Morale:</label>
-            <span class="d-inline-block">{statblock.morale ?? "—"}</span>
-          </td>
-
-          <td colspan="2">
-            <label>D. Bonus:</label>
-            <span class="d-inline-block">
-              {
-                statblock.damage_bonuses && statblock.damage_bonuses.length > 0
-                  ? statblock.damage_bonuses.map(db => `${db.type}+${db.value}`).join(", ")
-                  : "—"
-              }
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>
-            <label>Move:</label>
-            <span class="d-inline-block">{statblock.move}</span>
-          </td>
-
-          <td colspan="2">
-            <label>HP:</label>
-            <span class="d-inline-block">{statblock.hp}</span>
-
-            <term class="ms-2">WP:</label>
-            <span class="d-inline-block">{statblock.wp ?? "—"}</span>
-          </td>
-        </tr>
-
-        {statblock.skills && statblock.skills.length > 0 && (
+        <tbody>
           <tr>
-            <td colspan="3">
-              <term class="me-1">Skills:</label>
-              {statblock.skills.map((skill, i) => (
-                <span class="d-inline-block capitalized">
-                  {skill.name} {skill.level}{i < statblock.skills.length - 1 ? ", " : ""}
-                </span>
-              ))}
+            <td>
+              <label class="statblock-label">Morale:</label>
+              <span class="d-inline-block">{statblock.morale ?? "—"}</span>
+            </td>
+
+            <td colspan="2">
+              <label class="statblock-label">D. Bonus:</label>
+              <span class="d-inline-block">
+                {
+                  statblock.damage_bonuses && statblock.damage_bonuses.length > 0
+                    ? statblock.damage_bonuses.map(db => `${db.type}+${db.value}`).join(", ")
+                    : "—"
+                }
+              </span>
             </td>
           </tr>
-        )}
 
-        {statblock.abilities && statblock.abilities.length > 0 && (
           <tr>
-            <td colspan="3">
-              <term class="me-1">Abilities:</label>
-              {statblock.abilities.map((ability, i) => (
-                <span class="d-inline-block capitalized">
-                  {ability}{i < statblock.abilities.length - 1 ? ", " : ""}
-                </span>
-              ))}
+            <td>
+              <label class="statblock-label">Move:</label>
+              <span class="d-inline-block">{statblock.move}</span>
+            </td>
+
+            <td colspan="2">
+              <label class="statblock-label">HP:</label>
+              <span class="d-inline-block">{statblock.hp}</span>
+
+              <label class="statblock-label ms-2">WP:</label>
+              <span class="d-inline-block">{statblock.wp ?? "—"}</span>
             </td>
           </tr>
-        )}
 
-        {statblock.spells && statblock.spells.length > 0 && (
           <tr>
             <td colspan="3">
-              <term class="me-1">Spells:</label>
-              {statblock.spells.map((spell, i) => (
-                <span class="d-inline-block">
-                  {spell}{i < statblock.spells.length - 1 ? ", " : ""}
-                </span>
+              <label class="statblock-label me-1">Skills:</label>
+              {statblock.skills && statblock.skills.map((skill, i) => (
+                <span>
+                <span class="capitalized no-break">{skill.name} {skill.level}</span>{i < statblock.skills.length - 1 ? ", " : ", "}
+              </span>
               ))}
+              <span class="no-break">Untrained 5</span>
             </td>
           </tr>
-        )}
 
-        {statblock.armors && statblock.armors.length > 0 && (
-          <tr>
-            <td colspan="3">
-              <term class="me-1">Typical Armor:</label>
-              {statblock.armors.map((armor, i) => (
-                <span class="d-inline-block capitalized">
-                  {armor.name} ({armor.rating}){i < statblock.armors.length - 1 ? ", " : ""}
-                </span>
-              ))}
-            </td>
-          </tr>
-        )}
+          {statblock.abilities && statblock.abilities.length > 0 && (
+            <tr>
+              <td colspan="3">
+                <label class="statblock-label me-1">Abilities:</label>
+                {statblock.abilities.map((ability, i) => (
+                  <span class="capitalized">
+                    {ability}{i < statblock.abilities.length - 1 ? ", " : ""}
+                  </span>
+                ))}
+              </td>
+            </tr>
+          )}
 
-        {statblock.weapons && statblock.weapons.length > 0 && (
-          <tr>
-            <td colspan="3">
-              <term class="me-1">Typical Weapons:</label>
-              {statblock.weapons.map((weapon, i) => (
-                <span class="d-inline-block capitalized">
-                  {weapon.name} ({weapon.damage_dice.count}{weapon.damage_dice.type}){i < statblock.weapons.length - 1 ? ", " : ""}
-                </span>
-              ))}
-            </td>
-          </tr>
-        )}
+          {statblock.spells && statblock.spells.length > 0 && (
+            <tr>
+              <td colspan="3">
+                <label class="statblock-label me-1">Spells:</label>
+                {statblock.spells.map((spell, i) => (
+                  <span class="">
+                    {spell}{i < statblock.spells.length - 1 ? ", " : ""}
+                  </span>
+                ))}
+              </td>
+            </tr>
+          )}
+
+          {statblock.armors && statblock.armors.length > 0 && (
+            <tr>
+              <td colspan="3">
+                <label class="statblock-label me-1">Typical Armor:</label>
+                {statblock.armors.map((armor, i) => (
+                  <span class="capitalized">
+                    {armor.name} ({armor.rating}){i < statblock.armors.length - 1 ? ", " : ""}
+                  </span>
+                ))}
+              </td>
+            </tr>
+          )}
+
+          {statblock.weapons && statblock.weapons.length > 0 && (
+            <tr>
+              <td colspan="3">
+                <label class="statblock-label me-1">Typical Weapons:</label>
+                {statblock.weapons.map((weapon, i) => (
+                  <span class="capitalized">
+                    {weapon.name} {weapon.level} ({weapon.damage_dice.count}{weapon.damage_dice.type}, durability {weapon.durability}){i < statblock.weapons.length - 1 ? ", " : ""}
+                  </span>
+                ))}
+              </td>
+            </tr>
+          )}
+        </tbody>
       </table>
 
       {statblock.resistance && (

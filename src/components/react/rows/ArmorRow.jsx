@@ -10,15 +10,16 @@ export default function ArmorRow({ armor, onChange }) {
   return (
     <div className="row-flex">
       <TextInput
-        label="Name"
         value={armor.name}
         onChange={(v) => update("name", v)}
+        size={12}
       />
       <NumberInput
         label="Rating"
         value={armor.rating}
         onChange={(v) => update("rating", v)}
-        width={2}
+        min={1}
+        max={99}
       />
     </div>
   );

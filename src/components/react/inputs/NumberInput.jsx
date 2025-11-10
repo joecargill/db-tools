@@ -2,7 +2,7 @@ import { useRef } from "react";
 
 import "../../../styles/input.css";
 
-export default function NumberInput({ label, value, onChange, size, min, max, required = true, }) {
+export default function NumberInput({ className, label, value, onChange, size, min, max, required = true, }) {
 const inputRef = useRef(null);
 
   const handleChange = (e) => {
@@ -39,8 +39,8 @@ const inputRef = useRef(null);
   };
 
   return (
-    <label className="input-row">
-      <span className="<label">{label}</span>
+    <div className={`input-row ${className}`}>
+      <span className="term">{label}</span>
       <input
         ref={inputRef}
         type="number"
@@ -52,6 +52,6 @@ const inputRef = useRef(null);
         max={max}
         placeholder={!required ? "—" : undefined}
       />
-    </label>
+    </div>
   );
 }

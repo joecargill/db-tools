@@ -24,6 +24,8 @@ export default function SkillRow({ skill, onChange, usedNames }) {
         label="Level"
         value={skill.level}
         onChange={(v) => update("level", v)}
+        min={1}
+        max={18}
       />
     </div>
   );

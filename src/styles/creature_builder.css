@@ -6,7 +6,7 @@
 
 .input-row {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   font-size: 0.9rem;
 }
 
@@ -15,7 +15,7 @@
 .input-row textarea {
   margin-top: 2px;
   padding: 4px 6px;
-  background: var(--db-statblock-light);
+  
   color: var(--db-dark);
   /* border: 1px solid #444; */
   border-radius: 4px;
@@ -278,5 +278,3 @@
 .select-inline:focus {
   border-bottom: 1px solid #666;
 }
-
-

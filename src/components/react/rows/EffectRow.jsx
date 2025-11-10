@@ -13,6 +13,8 @@ export default function EffectRow({ effect, onChange }) {
         label="Effect"
         value={effect.name}
         onChange={(v) => update("name", v)}
+        size={12}
+        className={"d-inline-block"}
       />
       <TextAreaInput
         label="Description"
