@@ -1,14 +1,16 @@
 {
-  "type": "MONSTER",
+  "statblock": "MONSTER",
   "name": "Carrion Crawler",
   "morale": 9,
   "ferocity": 2,
   "size": "LARGE",
   "move": 20,
   "hp": 20,
-  "tags": [
-    "beast"
-  ],
+  "tags": {
+    "type": ["beast"],
+    "environment": ["cave"],
+    "trait": []
+  },
   "attacks": [
     {
       "result": "1-2",

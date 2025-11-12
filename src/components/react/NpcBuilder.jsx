@@ -28,7 +28,7 @@ import "../../styles/creature_builder.css";
 import { SKILL_NAMES } from "../../data/skillNames";
 
 const DEFAULT_NPC = {
-  type: "NPC",
+  statblock: "NPC",
   name: "",
   description: "",
   morale: undefined,

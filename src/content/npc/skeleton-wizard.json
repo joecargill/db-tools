@@ -1,5 +1,5 @@
 {
-  "type": "NPC",
+  "statblock": "NPC",
   "name": "Skeleton, Wizard",
   "description": "A humanoid skeleton of a long dead wizard, that has risen from the dead due to some foul necromantic magic.",
   "morale": 12,
@@ -10,11 +10,11 @@
   "resistance": "Piercing, Slashing",
   "immunity": "Poison",
   "weakness": "Bludgeoning",
-  "tags": [
-    "humanoid",
-    "undead",
-    "spellcaster"
-  ],
+  "tags": {
+    "type": ["humanoid", "undead"],
+    "environment": [],
+    "trait": ["spellcaster"]
+  },
   "skills": [
     {
       "name": "Elementalism",

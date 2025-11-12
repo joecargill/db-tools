@@ -1,15 +1,16 @@
 {
-  "type": "NPC",
+  "statblock": "NPC",
   "name": "Orc, Shaman",
   "description": "An orcic spellcaster, calling upon dark magic to aid allies or curse foes.",
   "size": "NORMAL",
   "move": 6,
   "hp": 12,
   "wp": 12,
-  "tags": [
-    "humanoid",
-    "spellcaster"
-  ],
+  "tags": {
+    "type": ["humanoid"],
+    "environment": ["wasteland"],
+    "trait": ["spellcaster"]
+  },
   "skills": [
     {
       "name": "Elementalism",

@@ -1,15 +1,16 @@
 {
-  "type": "NPC",
+  "statblock": "NPC",
   "name": "Kobold, Shaman",
   "description": "A spellcasting kobold who supports allies with magic and trickery.",
   "size": "SMALL",
   "move": 6,
   "hp": 6,
   "wp": 10,
-  "tags": [
-    "humanoid",
-    "spellcaster"
-  ],
+  "tags": {
+    "type": ["humanoid"],
+    "environment": ["mountain", "wasteland"],
+    "trait": ["spellcaster"]
+  },
   "skills": [
     {
       "name": "Elementalism",

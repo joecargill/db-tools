@@ -1,14 +1,16 @@
 {
-  "type": "MONSTER",
+  "statblock": "MONSTER",
   "name": "Wyvern",
   "description": "A dragon-like creature with a poisonous tail stinger and large wings.",
   "ferocity": 16,
   "size": "HUGE",
   "move": 8,
   "hp": 45,
-  "tags": [
-    "dragon"
-  ],
+  "tags": {
+    "type": ["dragon"],
+    "environment": ["mountain"],
+    "trait": []
+  },
   "attacks": [
     {
       "name": "Claw",

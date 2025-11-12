@@ -1,14 +1,16 @@
 {
-  "type": "NPC",
+  "statblock": "NPC",
   "name": "Dwarf, Warrior",
   "description": "Stocky humanoid with endurance and skill in close combat.",
   "size": "NORMAL",
   "move": 10,
   "hp": 12,
   "wp": 10,
-  "tags": [
-    "humanoid"
-  ],
+  "tags": {
+    "type": ["humanoid"],
+    "environment": ["mountain"],
+    "trait": []
+  },
   "skills": [
     {
       "name": "Awareness",

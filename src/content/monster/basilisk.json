@@ -1,15 +1,16 @@
 {
-  "type": "MONSTER",
+  "statblock": "MONSTER",
   "name": "Basilisk",
   "description": "A reptilian creature with a deadly gaze that can turn creatures to stone.",
   "ferocity": 12,
   "size": "LARGE",
   "move": 6,
   "hp": 20,
-  "tags": [
-    "beast",
-    "magical"
-  ],
+  "tags": {
+    "type": ["beast"],
+    "environment": ["swamp", "cave"],
+    "trait": ["magical"]
+  },
   "attacks": [
     {
       "name": "Bite",

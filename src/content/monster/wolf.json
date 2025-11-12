@@ -1,14 +1,16 @@
 {
-  "type": "MONSTER",
+  "statblock": "MONSTER",
   "name": "Wolf",
   "description": "A pack-hunting predator, quick and cunning.",
   "ferocity": 6,
   "size": "NORMAL",
   "move": 8,
   "hp": 12,
-  "tags": [
-    "beast"
-  ],
+  "tags": {
+    "type": ["beast"],
+    "environment": ["forest", "grassland"],
+    "trait": []
+  },
   "attacks": [
     {
       "name": "Bite",

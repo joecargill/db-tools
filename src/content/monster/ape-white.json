@@ -1,5 +1,5 @@
 {
-  "type": "MONSTER",
+  "statblock": "MONSTER",
   "name": "Ape, White",
   "description": "Albino, herbivorous, gorilla-like apes that live in caves and emerge at night to forage. ",
   "morale": 7,
@@ -7,9 +7,11 @@
   "size": "NORMAL",
   "move": 14,
   "hp": 18,
-  "tags": [
-    "beast"
-  ],
+  "tags": {
+    "type": ["beast"],
+    "environment": ["jungle"],
+    "trait": []
+  },
   "skills": [
     {
       "name": "Awareness",

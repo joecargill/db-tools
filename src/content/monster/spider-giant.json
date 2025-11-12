@@ -1,15 +1,16 @@
 {
-  "type": "MONSTER",
+  "statblock": "MONSTER",
   "name": "Spider, Giant",
   "description": "A huge, venomous spider that hunts by ambush.",
   "ferocity": 10,
   "size": "LARGE",
   "move": 6,
   "hp": 18,
-  "tags": [
-    "beast",
-    "giant"
-  ],
+  "tags": {
+    "type": ["beast"],
+    "environment": ["forest"],
+    "trait": ["giant"]
+  },
   "attacks": [
     {
       "name": "Bite",

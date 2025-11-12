@@ -1,15 +1,16 @@
 {
-  "type": "NPC",
+  "statblock": "NPC",
   "name": "Lizardman, Shaman",
   "description": "A mystical lizardman who uses minor magic and nature knowledge to aid allies.",
   "size": "NORMAL",
   "move": 6,
   "hp": 12,
   "wp": 10,
-  "tags": [
-    "humanoid",
-    "spellcaster"
-  ],
+  "tags": {
+    "type": ["humanoid"],
+    "environment": [],
+    "trait": ["spellcaster"]
+  },
   "skills": [
     {
       "name": "Elementalism",

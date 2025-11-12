@@ -1,5 +1,5 @@
 {
-  "type": "MONSTER",
+  "statblock": "MONSTER",
   "name": "Dragon, Red",
   "description": "Dragons are vicious, reptilian beasts mainly found in rugged mountainous areas, where they build their dens in deep caves or abandoned dwarven mines. They are ancient beings of power and magic who consider themselves the true masters of the world. Dragons are cunning and often frighteningly eloquent, notorious for deceiving their victims with fair words and treacherous lies. On the other hand, they are as vain as peacocks and themselves susceptible to silver-tongued flattery. Another weakness is their attraction to gold, which often causes conflicts with dwarves, humans, and others who share the draconic lust for treasure and glittering objects.",
   "morale": 12,
@@ -11,9 +11,11 @@
   "resistance": "All piercing damage is halved (rounded up).",
   "immunity": "Immune to fear and PERSUASION.",
   "weakness": "Red dragons have a weakness to cold temperatures. All cold damage ignores armor.",
-  "tags": [
-    "dragon"
-  ],
+  "tags": {
+    "type": ["dragon"],
+    "environment": ["grassland", "cave"],
+    "trait": []
+  },
   "skills": [
     { "name": "Spot Hidden", "level": 10 },
     { "name": "Evade", "level": 6 },

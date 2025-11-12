@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import TagGroupsFilters from "../../components/TagGroupsFilters.astro";
+
+import TagsFilters from "../../components/TagsFilters.astro";
 
 import { getCollection } from "astro:content";
 import { slugFromId } from "../../utils/slug";
@@ -12,49 +13,33 @@ const npcs = await getCollection("npc");
 const creatures = [...monsters, ...npcs];
 creatures.sort((a, b) => a.data.name.localeCompare(b.data.name));
 
-// ---------------------------------------------
-// Build grouped tags for UI
-// ---------------------------------------------
-
-const tagGroups = {
-  type: new Set(),
-  trait: new Set(),
-  environment: new Set(),
-};
-
-for (const c of creatures) {
-  const t = c.data.tags || {};
-  (t.type || []).forEach(v => tagGroups.type.add(v));
-  (t.trait || []).forEach(v => tagGroups.trait.add(v));
-  (t.environment || []).forEach(v => tagGroups.environment.add(v));
-}
-
-// Convert Sets → sorted arrays
-const sortedGroups = {};
-for (const [key, set] of Object.entries(tagGroups)) {
-  sortedGroups[key] = [...set].sort((a, b) => a.localeCompare(b));
-}
-
-// ---------------------------------------------
-// Standard alphabetically grouped creatures
-// ---------------------------------------------
 const grouped = creatures.reduce((acc, entry) => {
   const first = entry.data.name[0].toUpperCase();
+
   if (!acc[first]) acc[first] = [];
   acc[first].push(entry);
+
   return acc;
-}, {});
+}, {} as Record<string, typeof creatures>);
+
+const allTags = [
+  ...new Set(
+    creatures
+      .flatMap((c) => flattenTags(c.data.tags))
+      .filter(Boolean)
+      .sort((a, b) => a.localeCompare(b))
+  ),
+];
 
 const page = {
   title: "Bestiary",
   path: "/bestiary"
-};
+}
 ---
 
 <BaseLayout page={page}>
 
-  <TagGroupsFilters groups={sortedGroups} />
-
+  <TagsFilters tags={allTags} />
   <br/>
 
   <div class="index-columns">

@@ -1,5 +1,5 @@
 {
-  "type": "MONSTER",
+  "statblock": "MONSTER",
   "name": "Automaton",
   "description": "An automaton is a mechanical construct built from metal and gears, powered by alchemical cores or arcane energy. These tireless guardians are often found patrolling ancient ruins, wizard towers, or treasure vaults. They obey their creator’s commands without hesitation, attacking intruders with mechanical precision. Unlike living creatures, automatons feel no pain or fear, and continue to function until completely destroyed.",
   "morale": 12,
@@ -8,10 +8,11 @@
   "move": 8,
   "hp": 10,
   "armor": 6,
-  "tags": [
-    "construct",
-    "mindless"
-  ],
+  "tags": {
+    "type": ["construct"],
+    "environment": ["dungeon"],
+    "trait": ["mindless"]
+  },
   "skills": [
     {
       "name": "Awareness",

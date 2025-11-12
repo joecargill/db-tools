@@ -1,15 +1,16 @@
 {
-  "type": "NPC",
+  "statblock": "NPC",
   "name": "Elf",
   "description": "A graceful and agile humanoid with keen senses and a deep connection to nature.",
   "size": "NORMAL",
   "move": 6,
   "hp": 12,
   "wp": 14,
-  "tags": [
-    "humanoid",
-    "spellcaster"
-  ],
+  "tags": {
+    "type": ["humanoid"],
+    "environment": ["forest"],
+    "trait": ["spellcaster"]
+  },
   "skills": [
     {
       "name": "Awareness",

@@ -1,5 +1,5 @@
 {
-  "type": "NPC",
+  "statblock": "NPC",
   "name": "Wizard, Apprentice",
   "description": "A fresh student in the magical arts, eager to test out the incantations they've studiously memorized for uncountable hours in dusty library rooms.",
   "morale": 4,
@@ -7,10 +7,11 @@
   "move": 6,
   "hp": 20,
   "wp": 10,
-  "tags": [
-    "humanoid",
-    "spellcaster"
-  ],
+  "tags": {
+    "type": ["humanoid"],
+    "environment": [],
+    "trait": ["spellcaster"]
+  },
   "skills": [
     {
       "name": "Elementalism",

@@ -1,0 +1,38 @@
+---
+import "../styles/tags.css";
+
+// groups = { type: [...], trait: [...], environment: [...], statblock: [...] }
+const { groups, current } = Astro.props;
+---
+
+<div class="tags-groups">
+
+  {Object.entries(groups).map(([groupName, tags]) => (
+    <>
+      {tags.length > 0 && (
+        <div class="tag-group">
+          <h5 class="tag-group-title">
+            {groupName.charAt(0).toUpperCase() + groupName.slice(1)}
+          </h5>
+
+          <div class="">
+            <div class="tags">
+              {tags.map(tag => (
+                <p class={current === tag ? "tag tag-filter tag-filter--selected" : "tag tag-filter"}>
+                  <a
+                    href={current === tag
+                      ? "/bestiary"
+                      : `/bestiary/tags/${tag}`}
+                  >
+                    {tag}
+                  </a>
+                </p>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  ))}
+
+</div>

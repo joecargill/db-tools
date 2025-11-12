@@ -1,14 +1,16 @@
 {
-  "type": "NPC",
+  "statblock": "NPC",
   "name": "Lizardman",
   "description": "Humanoid reptilian warrior, strong and agile in swampy terrain.",
   "size": "NORMAL",
   "move": 6,
   "hp": 10,
   "wp": 8,
-  "tags": [
-    "humanoid"
-  ],
+  "tags": {
+    "type": ["humanoid"],
+    "environment": [],
+    "trait": []
+  },
   "skills": [
     {
       "name": "Awareness",

@@ -1,13 +1,15 @@
 {
-  "type": "NPC",
+  "statblock": "NPC",
   "name": "Guard, Prison",
   "morale": 6,
   "size": "NORMAL",
   "move": 6,
   "hp": 15,
-  "tags": [
-    "humanoid"
-  ],
+  "tags": {
+    "type": ["humanoid"],
+    "environment": ["urban"],
+    "trait": []
+  },
   "skills": [
     {
       "name": "Spot Hidden",

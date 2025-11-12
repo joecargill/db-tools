@@ -1,14 +1,16 @@
 {
-  "type": "NPC",
+  "statblock": "NPC",
   "name": "Goblin, Chief",
   "description": "A cunning goblin leader, coordinating ambushes and guerilla tactics.",
   "size": "SMALL",
   "move": 6,
   "hp": 8,
   "wp": 8,
-  "tags": [
-    "humanoid"
-  ],
+  "tags": {
+    "type": ["humanoid"],
+    "environment": ["grassland", "wasteland"],
+    "trait": []
+  },
   "skills": [
     {
       "name": "Bluffing",

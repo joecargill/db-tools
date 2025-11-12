@@ -1,15 +1,16 @@
 {
-  "type": "MONSTER",
+  "statblock": "MONSTER",
   "name": "Ogre",
   "description": "A large, brutish humanoid with immense strength but limited intelligence.",
   "ferocity": 14,
   "size": "HUGE",
   "move": 6,
   "hp": 30,
-  "tags": [
-    "giant",
-    "humanoid"
-  ],
+  "tags": {
+    "type": ["humanoid"],
+    "environment": ["forest"],
+    "trait": ["giant"]
+  },
   "attacks": [
     {
       "name": "Club",

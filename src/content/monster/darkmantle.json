@@ -1,5 +1,5 @@
 {
-  "type": "MONSTER",
+  "statblock": "MONSTER",
   "name": "Darkmantle",
   "description": "Floating black squid-like entities, darkmantles tend to nest in dark, damp environments such as subterranean caves.",
   "morale": 4,
@@ -7,10 +7,11 @@
   "size": "NORMAL",
   "move": 12,
   "hp": 6,
-  "tags": [
-    "aberration",
-    "magical"
-  ],
+  "tags": {
+    "type": ["aberration"],
+    "environment": ["dungeon", "cave"],
+    "trait": ["magical"]
+  },
   "effects": [
     {
       "name": "Floating",

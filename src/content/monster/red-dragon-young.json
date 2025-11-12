@@ -1,14 +1,16 @@
 {
-  "type": "MONSTER",
+  "statblock": "MONSTER",
   "name": "Dragon, Red, Young",
   "description": "A small, but fiery and aggressive dragon with a breath weapon.",
   "ferocity": 18,
   "size": "HUGE",
   "move": 6,
   "hp": 50,
-  "tags": [
-    "dragon"
-  ],
+  "tags": {
+    "type": ["dragon"],
+    "environment": ["grassland", "cave"],
+    "trait": []
+  },
   "attacks": [
     {
       "name": "Claw",

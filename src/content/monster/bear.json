@@ -1,14 +1,16 @@
 {
-  "type": "MONSTER",
+  "statblock": "MONSTER",
   "name": "Bear",
   "description": "A large, powerful mammal known for its strength and ferocity.",
   "ferocity": 10,
   "size": "LARGE",
   "move": 6,
   "hp": 24,
-  "tags": [
-    "beast"
-  ],
+  "tags": {
+    "type": ["beast"],
+    "environment": ["forest"],
+    "trait": []
+  },
   "attacks": [
     {
       "name": "Claw",

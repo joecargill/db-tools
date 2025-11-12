@@ -3,7 +3,7 @@ import { z } from "zod";
 import { SkillSchema, DiceSchema, EffectSchema } from "./shared";
 
 export const NpcSchema = z.object({
-  type: z.literal("NPC"),
+  statblock: z.literal("NPC"),
   name: z.string(),
   description: z.string().optional(),
   morale: z.number().optional(),
@@ -15,7 +15,11 @@ export const NpcSchema = z.object({
   resistance: z.string().optional(),
   immunity: z.string().optional(),
   weakness: z.string().optional(),
-  tags: z.array(z.string()).optional(),
+  tags: z.object({
+    type: z.array(z.string()).default([]),
+    environment: z.array(z.string()).default([]),
+    trait: z.array(z.string()).default([]),
+  }).default({ type: [], environment: [], trait: [] }),
 
   skills: z.array(SkillSchema).optional(),
   effects: z.array(EffectSchema).optional(),

@@ -1,14 +1,16 @@
 {
-  "type": "NPC",
+  "statblock": "NPC",
   "name": "Orc, Warleader",
   "description": "A brutal orc with tactical knowledge, leading raiding parties with strength and skill.",
   "size": "NORMAL",
   "move": 6,
   "hp": 14,
   "wp": 10,
-  "tags": [
-    "humanoid"
-  ],
+  "tags": {
+    "type": ["humanoid"],
+    "environment": ["wasteland"],
+    "trait": []
+  },
   "skills": [
     {
       "name": "Evade",

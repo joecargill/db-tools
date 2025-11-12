@@ -1,15 +1,16 @@
 {
-  "type": "NPC",
+  "statblock": "NPC",
   "name": "Elf, Warrior",
   "description": "Graceful humanoid fighter with long life and keen senses.",
   "size": "NORMAL",
   "move": 6,
   "hp": 8,
   "wp": 10,
-  "tags": [
-    "humanoid",
-    "spellcaster"
-  ],
+  "tags": {
+    "type": ["humanoid"],
+    "environment": ["forest"],
+    "trait": []
+  },
   "skills": [
     {
       "name": "Awareness",

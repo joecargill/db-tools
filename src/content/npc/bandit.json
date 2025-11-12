@@ -1,14 +1,16 @@
 {
-  "type": "NPC",
+  "statblock": "NPC",
   "name": "Bandit",
   "description": "Thieves who live by robbery.",
   "morale": 8,
   "size": "NORMAL",
   "move": 8,
   "hp": 4,
-  "tags": [
-    "humanoid"
-  ],
+  "tags": {
+    "type": ["humanoid"],
+    "environment": [],
+    "trait": []
+  },
   "skills": [
     {
       "name": "Evade",

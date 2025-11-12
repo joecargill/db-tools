@@ -4,7 +4,7 @@
 }
 
 .tag {
-  margin: 0.25em;
+  margin: 0.25em 0.25em 0.25em 0;
   /* border: solid 1px var(--db-green-dark); */
   border-radius: .25em;
   padding: 0.2em 0.4em 0.2em 0.6em;
@@ -18,6 +18,9 @@
     color: var(--db-light);
   }
 }
+/* .tag:first-child {
+  margin-left: 0;
+} */
 .dark .tag {
   /* border: solid 1px var(--db-green-light); */
   background-color: var(--db-green-light);
@@ -57,4 +60,8 @@
 .dark .tag-filter--selected {
   background-color: var(--db-green-light);
   border-color: var(--db-green-light);
+}
+
+.tag-group-title {
+  margin: 0.25em 0 0 0;
 }

@@ -1,15 +1,16 @@
 {
-  "type": "MONSTER",
+  "statblock": "MONSTER",
   "name": "Snake, Giant",
   "description": "A massive serpent capable of constricting and venomous strikes.",
   "ferocity": 8,
   "size": "LARGE",
   "move": 6,
   "hp": 16,
-  "tags": [
-    "beast",
-    "giant"
-  ],
+  "tags": {
+    "type": ["beast"],
+    "environment": ["jungle"],
+    "trait": ["giant"]
+  },
   "attacks": [
     {
       "name": "Bite",

@@ -1,14 +1,16 @@
 {
-  "type": "NPC",
+  "statblock": "NPC",
   "name": "Kobold",
   "description": "A small, crafty reptilian humanoid that prefers ambush tactics.",
   "size": "SMALL",
   "move": 6,
   "hp": 4,
   "wp": 6,
-  "tags": [
-    "humanoid"
-  ],
+  "tags": {
+    "type": ["humanoid"],
+    "environment": ["mountain", "wasteland"],
+    "trait": []
+  },
   "skills": [
     {
       "name": "Sneaking",

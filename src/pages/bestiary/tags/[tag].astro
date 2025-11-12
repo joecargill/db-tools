@@ -1,28 +1,33 @@
 ---
 import { getCollection } from "astro:content";
 import { slugFromId } from "../../../utils/slug";
+import { flattenTags } from "../../../utils/tags";
 
 import BaseLayout from "../../../layouts/BaseLayout.astro";
-
-import TagsFilters from "../../../components/TagsFilters.astro";
+import TagGroupsFilters from "../../../components/TagGroupsFilters.astro";
 
 export async function getStaticPaths() {
   const monsters = await getCollection("monster");
   const npcs = await getCollection("npc");
-
   const allCreatures = [...monsters, ...npcs];
 
-  // Gather ALL unique tags across creatures
-  const uniqueTags = new Set<string>();
+  // Collect all normal tags
+  const uniqueTags = new Set();
   for (const c of allCreatures) {
-    c.data.tags?.forEach((t) => uniqueTags.add(t));
+    flattenTags(c.data.tags).forEach((t) => uniqueTags.add(t));
   }
 
-  // Build static paths
+  // Add statblock virtual tags
+  uniqueTags.add("NPC");
+  uniqueTags.add("MONSTER");
+
   return [...uniqueTags].map((tag) => {
-    const filteredCreatures = allCreatures.filter((c) =>
-      c.data.tags?.includes(tag)
-    );
+    const filteredCreatures = allCreatures.filter((c) => {
+      if (tag === "NPC" || tag === "MONSTER") {
+        return c.data.statblock === tag;
+      }
+      return flattenTags(c.data.tags).includes(tag)
+    });
 
     return {
       params: { tag },
@@ -34,54 +39,72 @@ export async function getStaticPaths() {
 const { tag } = Astro.params;
 const { filteredCreatures, allCreatures } = Astro.props;
 
-// Sort alphabetically
+// -----------------------------
+// Build tag groups (same as index)
+// -----------------------------
+
+const tagGroups = {
+  type: new Set(),
+  trait: new Set(),
+  environment: new Set(),
+};
+
+for (const c of allCreatures) {
+  const t = c.data.tags || {};
+  (t.type || []).forEach(v => tagGroups.type.add(v));
+  (t.trait || []).forEach(v => tagGroups.trait.add(v));
+  (t.environment || []).forEach(v => tagGroups.environment.add(v));
+}
+
+// Convert Sets → sorted arrays
+const sortedGroups = {};
+for (const [key, set] of Object.entries(tagGroups)) {
+  sortedGroups[key] = [...set].sort((a, b) => a.localeCompare(b));
+}
+
+// -----------------------------
+// Group filtered creatures alphabetically
+// -----------------------------
 filteredCreatures.sort((a, b) => a.data.name.localeCompare(b.data.name));
 
-// Group alphabetically
 const grouped = filteredCreatures.reduce((acc, entry) => {
   const first = entry.data.name[0].toUpperCase();
   if (!acc[first]) acc[first] = [];
   acc[first].push(entry);
   return acc;
-}, {} as Record<string, typeof filteredCreatures>);
+}, {});
 
-const allTags = [
-  ...new Set(
-    allCreatures
-      .flatMap((c) => c.data.tags ?? [])
-      .filter(Boolean)
-      .sort((a, b) => a.localeCompare(b))
-  ),
-];
-
-function capitalize(str: string) {
+// -----------------------------
+function capitalize(str) {
   return str.replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
 const page = {
   title: "Bestiary",
   path: `/bestiary`,
-  metaTitle: `${capitalize(tag)} | Bestiary`
+  metaTitle: `${capitalize(tag)} | Bestiary`,
 };
 ---
 
 <BaseLayout page={page}>
 
-  <TagsFilters tags={allTags} current={tag}/>
+  <!-- NEW grouped filters -->
+  <TagGroupsFilters groups={sortedGroups} current={tag} />
+
   <br/>
 
   {filteredCreatures.length === 0 ? (
-    <p>No filteredCreatures have this tag.</p>
+    <p>No creatures have this tag.</p>
   ) : (
     <div class="index-columns">
       {Object.keys(grouped)
         .sort()
-        .map(letter => (
+        .map((letter) => (
           <section>
             <div class="index-section">
               <h2>{letter}</h2>
               <ul>
-                {grouped[letter].map(entry => (
+                {grouped[letter].map((entry) => (
                   <li>
                     <a href={`/bestiary/${entry.collection}/${slugFromId(entry.id)}`}>
                       {entry.data.name}

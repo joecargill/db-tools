@@ -1,15 +1,16 @@
 {
-  "type": "NPC",
+  "statblock": "NPC",
   "name": "Acolyte",
   "description": "A novice cleric devoted to their deity, skilled in healing and support magic.",
   "size": "NORMAL",
   "move": 6,
   "hp": 10,
   "wp": 12,
-  "tags": [
-    "humanoid",
-    "spellcaster"
-  ],
+  "tags": {
+    "type": ["humanoid"],
+    "environment": ["urban"],
+    "trait": ["spellcaster"]
+  },
   "skills": [
     {
       "name": "Healing",

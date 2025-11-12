@@ -1,15 +1,16 @@
 {
-  "type": "MONSTER",
+  "statblock": "MONSTER",
   "name": "Ooze",
   "description": "A large, transparent ooze that engulfs and digests creatures.",
   "ferocity": 12,
   "size": "HUGE",
   "move": 4,
   "hp": 22,
-  "tags": [
-    "ooze",
-    "mindless"
-  ],
+  "tags": {
+    "type": ["ooze"],
+    "environment": ["dungeon", "cave"],
+    "trait": ["mindless"]
+  },
   "attacks": [
     {
       "name": "Engulf",

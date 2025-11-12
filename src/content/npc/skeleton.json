@@ -1,5 +1,5 @@
 {
-  "type": "NPC",
+  "statblock": "NPC",
   "name": "Skeleton",
   "description": "A humanoid skeleton that has risen from the dead due to some foul necromantic magic.",
   "morale": 12,
@@ -9,10 +9,11 @@
   "resistance": "Piercing, Slashing",
   "immunity": "Poison",
   "weakness": "Bludgeoning",
-  "tags": [
-    "humanoid",
-    "undead"
-  ],
+  "tags": {
+    "type": ["humanoid", "undead"],
+    "environment": [],
+    "trait": []
+  },
   "skills": [
     {
       "name": "Evade",
